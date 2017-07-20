@@ -6,6 +6,7 @@ const app = require('../');
 const {bold} = require('chalk');
 const logSymbols = require('log-symbols');
 const meow = require('meow');
+const path = require('path');
 
 const cli = meow(`
     Usage
@@ -21,15 +22,21 @@ const cli = meow(`
     }
 });
 
+let binName = path.basename(process.argv.slice(1).shift());
 let cwd = process.cwd();
+let helpCmd = `${binName} --help`;
 let pkg;
 
 try {
     pkg = require(`${cwd}/package.json`);
 } catch (_) {
-    let message = `No ${bold('package.json')} file found. Try another directory?`
+    let messages = [
+        `No ${bold('package.json')} file found.`,
+        `Try another directory?`,
+        `You can also run ${bold(helpCmd)} for more info.`
+    ];
 
-    console.error(logSymbols.error, message);
+    console.error(logSymbols.error, ...messages);
     process.exit(1);
 }
 
