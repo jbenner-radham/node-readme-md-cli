@@ -32,9 +32,14 @@
   },
   "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
   "dependencies": {
+    "chalk": "^2.0.1",
+    "log-symbols": "^2.0.0",
+    "meow": "^3.7.0",
     "readme-md": "0.1.0-alpha.2"
   },
   "devDependencies": {
-    "jasmine": "^2.6.0"
+    "fs-extra": "^4.0.0",
+    "jasmine": "^2.6.0",
+    "tempy": "^0.1.0"
   }
 }
