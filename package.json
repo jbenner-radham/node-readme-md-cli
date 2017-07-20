@@ -1,0 +1,40 @@
+{
+  "name": "readme-md-cli",
+  "version": "0.0.0",
+  "description": "A CLI for the `readme-md` module (better description forthcoming...)",
+  "main": "./lib/index.js",
+  "bin": {
+    "readme-md": "./bin/cli.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbenner-radham/node-readme-md-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "readme",
+    "md",
+    "markdown",
+    "docs",
+    "documentation",
+    "generator"
+  ],
+  "author": "James Benner <james.benner@gmail.com> (http://www.jamesbenner.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbenner-radham/node-readme-md-cli/issues"
+  },
+  "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
+  "dependencies": {
+    "readme-md": "0.1.0-alpha.2"
+  },
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  }
+}
