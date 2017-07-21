@@ -13,6 +13,8 @@ Usage
 ```sh
 $ readme-md --help
 
+  A CLI for the `readme-md` module (better description forthcoming...)
+
   Usage
       $ readme-md
 
