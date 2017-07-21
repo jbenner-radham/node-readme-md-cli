@@ -13,6 +13,9 @@
     "lint": "eslint {bin,lib,spec}",
     "test": "npm run lint && jasmine"
   },
+  "engines": {
+    "node": ">=8.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jbenner-radham/node-readme-md-cli.git"

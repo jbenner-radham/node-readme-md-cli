@@ -1,7 +1,9 @@
 'use strict';
 
+const childProcess = require('child_process');
 const commandExistsSync = require('command-exists').sync;
-const exec = require('util').promisify(require('child_process').exec);
+const exec = require('util').promisify(childProcess.exec);
+const execSync = childProcess.execSync;
 const pkg = require('../package.json');
 const tempy = require('tempy');
 
@@ -9,6 +11,14 @@ const bin = Object.keys(pkg.bin).shift();
 const version = pkg.version;
 
 describe('readme-md-cli', function () {
+    beforeAll(function () {
+        execSync('npm link');
+    });
+
+    afterAll(function () {
+        execSync(`npm -g uninstall ${pkg.name}`);
+    });
+
     it('is an available system command', function () {
         expect(commandExistsSync(bin)).toBe(true);
     });
