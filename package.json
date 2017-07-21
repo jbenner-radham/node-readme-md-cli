@@ -12,6 +12,7 @@
   },
   "scripts": {
     "lint": "eslint {bin,lib,spec}",
+    "prepublishOnly": "trevor",
     "test": "npm run lint && jasmine"
   },
   "engines": {
@@ -48,6 +49,7 @@
     "eslint": "^4.3.0",
     "fs-extra": "^4.0.0",
     "jasmine": "^2.6.0",
-    "tempy": "^0.1.0"
+    "tempy": "^0.1.0",
+    "trevor": "^2.3.0"
   }
 }
