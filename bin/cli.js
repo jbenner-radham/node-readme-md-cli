@@ -8,7 +8,7 @@ const logSymbols = require('log-symbols');
 const meow = require('meow');
 const path = require('path');
 
-const cli = meow(`
+meow(`
     Usage
         $ readme-md
 

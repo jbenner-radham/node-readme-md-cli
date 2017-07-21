@@ -10,7 +10,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "jasmine"
+    "lint": "eslint {bin,lib,spec}",
+    "test": "npm run lint && jasmine"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "command-exists": "^1.2.2",
+    "eslint": "^4.3.0",
     "fs-extra": "^4.0.0",
     "jasmine": "^2.6.0",
     "tempy": "^0.1.0"

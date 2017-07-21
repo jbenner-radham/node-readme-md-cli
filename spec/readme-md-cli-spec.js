@@ -1,9 +1,7 @@
 'use strict';
 
-const any = jasmine.any;
 const commandExistsSync = require('command-exists').sync;
 const exec = require('util').promisify(require('child_process').exec);
-const fs = require('fs-extra');
 const pkg = require('../package.json');
 const tempy = require('tempy');
 
