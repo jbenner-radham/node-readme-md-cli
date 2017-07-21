@@ -10,11 +10,11 @@ const path = require('path');
 
 const cli = meow(`
     Usage
-      $ readme-md
+        $ readme-md
 
     Options
-      --help, -h     Display this message.
-      --version, -v  Display the application version.
+        --help, -h       Display this message.
+        --version, -v    Display the application version.
 `, {
     alias: {
         h: 'help',
@@ -22,18 +22,18 @@ const cli = meow(`
     }
 });
 
-let binName = path.basename(process.argv.slice(1).shift());
+let bin = path.basename(process.argv.slice(1).shift());
 let cwd = process.cwd();
-let helpCmd = `${binName} --help`;
+let helpCmd = `${bin} --help`;
 let pkg;
 
 try {
     pkg = require(`${cwd}/package.json`);
 } catch (_) {
     let messages = [
-        `No ${bold('package.json')} file found.`,
+        `No '${bold('package.json')}' file found.`,
         `Try another directory?`,
-        `You can also run ${bold(helpCmd)} for more info.`
+        `You can also run '${bold(helpCmd)}' for more info.`
     ];
 
     console.error(logSymbols.error, ...messages);
