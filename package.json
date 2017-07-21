@@ -38,6 +38,8 @@
   "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
   "dependencies": {
     "chalk": "^2.0.1",
+    "front-matter": "^2.1.2",
+    "lodash.get": "^4.4.2",
     "log-symbols": "^2.0.0",
     "meow": "^3.7.0",
     "readme-md": "0.1.0-alpha.2"

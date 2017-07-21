@@ -4,6 +4,7 @@
 
 const app = require('../');
 const {bold} = require('chalk');
+const frontMatter = require('front-matter');
 const fs = require('fs-extra');
 const logSymbols = require('log-symbols');
 const meow = require('meow');
@@ -11,7 +12,8 @@ const path = require('path');
 
 let alias = {h: 'help', v: 'version'};
 let usageFilePath = path.join(__dirname, '../example/cli/usage.txt');
-let usage = fs.readFileSync(usageFilePath, {encoding: 'utf-8'}).trim();
+let usageFileContents = fs.readFileSync(usageFilePath, {encoding: 'utf8'});
+let usage = frontMatter(usageFileContents).body.trim();
 
 meow(usage, {alias});
 

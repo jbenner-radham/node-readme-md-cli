@@ -10,7 +10,16 @@ $ npm install --save readme-md-cli
 
 Usage
 -----
-_To be documented._
+```sh
+$ readme-md --help
+
+  Usage
+      $ readme-md
+
+  Options
+      --help, -h       Display this message.
+      --version, -v    Display the application version.
+```
 
 Testing
 -------
