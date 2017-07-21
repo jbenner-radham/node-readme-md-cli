@@ -16,7 +16,7 @@
     "test": "npm run lint && jasmine"
   },
   "engines": {
-    "node": ">=8.0"
+    "node": ">=6.11"
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,7 @@
   "devDependencies": {
     "command-exists": "^1.2.2",
     "eslint": "^4.3.0",
+    "execa": "^0.7.0",
     "fs-extra": "^4.0.0",
     "jasmine": "^2.6.0",
     "tempy": "^0.1.0",

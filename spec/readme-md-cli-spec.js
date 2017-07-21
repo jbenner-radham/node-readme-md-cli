@@ -1,10 +1,8 @@
 'use strict';
 
-const childProcess = require('child_process');
 const commandExistsSync = require('command-exists').sync;
-const exec = require('util').promisify(childProcess.exec);
-const execSync = childProcess.execSync;
 const pkg = require('../package.json');
+const {shell, shellSync} = require('execa');
 const tempy = require('tempy');
 
 const bin = Object.keys(pkg.bin).shift();
@@ -12,11 +10,11 @@ const version = pkg.version;
 
 describe('readme-md-cli', function () {
     beforeAll(function () {
-        execSync('npm link');
+        shellSync('npm link');
     });
 
     afterAll(function () {
-        execSync(`npm -g uninstall ${pkg.name}`);
+        shellSync(`npm -g uninstall ${pkg.name}`);
     });
 
     it('is an available system command', function () {
@@ -24,34 +22,34 @@ describe('readme-md-cli', function () {
     });
 
     it('writes the version number to stdout if called with the `--version` flag', function (done) {
-        exec(`${bin} --version`).then(output => (output.stdout.trim() === version) ? done() : done.fail())
+        shell(`${bin} --version`).then(output => (output.stdout === version) ? done() : done.fail())
             .catch(() => done.fail());
     });
 
     it('should exit with error code `0` if called with the `--help` flag', function (done) {
-        exec(`${bin} --help`).then(() => done())
+        shell(`${bin} --help`).then(() => done())
             .catch(() => done.fail());
     });
 
     it('should exit with error code `0` if called with the `-h` flag', function (done) {
-        exec(`${bin} -h`).then(() => done())
+        shell(`${bin} -h`).then(() => done())
             .catch(() => done.fail());
     });
 
     it('should exit with error code `0` if called with the `--version` flag', function (done) {
-        exec(`${bin} --version`).then(() => done())
+        shell(`${bin} --version`).then(() => done())
             .catch(() => done.fail());
     });
 
     it('should exit with error code `0` if called with the `-v` flag', function (done) {
-        exec(`${bin} -v`).then(() => done())
+        shell(`${bin} -v`).then(() => done())
             .catch(() => done.fail());
     });
 
     it('should exit with error code `1` if called in a directory without a `package.json` file', function (done) {
         const cwd = tempy.directory();
 
-        exec(bin, {cwd}).then(() => done.fail())
-            .catch((error) => (error.code === 1) ? done() : done.fail());
+        shell(bin, {cwd}).then(() => done.fail())
+            .catch(error => (error.code === 1) ? done() : done.fail());
     });
 });
