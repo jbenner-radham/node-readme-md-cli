@@ -14,7 +14,7 @@
     "test": "npm run lint && jasmine"
   },
   "engines": {
-    "node": ">=8.2"
+    "node": ">=8.0"
   },
   "repository": {
     "type": "git",
