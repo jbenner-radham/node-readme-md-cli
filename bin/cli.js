@@ -4,23 +4,16 @@
 
 const app = require('../');
 const {bold} = require('chalk');
+const fs = require('fs-extra');
 const logSymbols = require('log-symbols');
 const meow = require('meow');
 const path = require('path');
 
-meow(`
-    Usage
-        $ readme-md
+let alias = {h: 'help', v: 'version'};
+let usageFilePath = path.join(__dirname, '../example/cli/usage.txt');
+let usage = fs.readFileSync(usageFilePath, {encoding: 'utf-8'}).trim();
 
-    Options
-        --help, -h       Display this message.
-        --version, -v    Display the application version.
-`, {
-    alias: {
-        h: 'help',
-        v: 'version'
-    }
-});
+meow(usage, {alias});
 
 let bin = path.basename(process.argv.slice(1).shift());
 let cwd = process.cwd();

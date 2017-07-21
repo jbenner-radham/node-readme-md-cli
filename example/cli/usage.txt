@@ -1,0 +1,6 @@
+Usage
+    $ readme-md
+
+Options
+    --help, -h       Display this message.
+    --version, -v    Display the application version.
