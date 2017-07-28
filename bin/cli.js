@@ -21,6 +21,7 @@ let usage = `
 meow(usage, {alias});
 
 let bin = path.basename(process.argv.slice(1).shift());
+let config = {};
 let cwd = process.cwd();
 let helpCmd = `${bin} --help`;
 let pkg;
@@ -38,6 +39,11 @@ try {
     process.exit(1);
 }
 
-let readme = app({pkg});
+try {
+    config = require(`${cwd}/.config/readme-md.json`);
+} catch (_) { /* Do nothing. */ }
+
+let parameters = Object.assign({}, {pkg}, config);
+let readme = app(parameters);
 
 console.log(readme);

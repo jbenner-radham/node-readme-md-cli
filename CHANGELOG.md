@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]
 ------------
+### Added
+- Added automatic `example/cli/usage.md` inclusion.
+
 ### Changed
 - Refactor to allow Node.js `>=6.11` environments.
 
