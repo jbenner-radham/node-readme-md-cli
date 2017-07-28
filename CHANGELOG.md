@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ------------
 ### Added
 - Added automatic `example/cli/usage.md` inclusion.
+- Added project level `.config/readme-md.json` parsing.
 
 ### Changed
 - Refactor to allow Node.js `>=6.11` environments.
