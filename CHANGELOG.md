@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [Unreleased]
 ------------
 ### Added
+- Added expanded documentation in the `doc/` directory.
 - Implemented initial project level config via `.config/readme-md.yml` file.
 
 [0.2.0] - 2017-10-01

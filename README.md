@@ -1,6 +1,6 @@
 readme-md-cli
 =============
-A CLI for the `readme-md` module.
+A CLI for the [readme-md](https://www.npmjs.com/package/readme-md) module.
 
 Install
 -------
@@ -13,7 +13,7 @@ Usage
 ```sh
 $ readme-md --help
 
-  A CLI for the `readme-md` module (better description forthcoming...)
+  A CLI for the `readme-md` module.
 
   Usage
       $ readme-md
