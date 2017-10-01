@@ -1,7 +1,7 @@
 ```sh
 $ readme-md --help
 
-  A CLI for the `readme-md` module (better description forthcoming...)
+  A CLI for the `readme-md` module.
 
   Usage
       $ readme-md
