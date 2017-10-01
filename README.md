@@ -5,7 +5,7 @@ A CLI for the `readme-md` module (better description forthcoming...)
 Install
 -------
 ```sh
-$ npm install --save readme-md-cli
+$ yarn add readme-md-cli # Or alternatively: `npm install --save readme-md-cli`
 ```
 
 Usage
@@ -26,9 +26,9 @@ $ readme-md --help
 Testing
 -------
 ```sh
-$ npm test
+$ yarn test # Or alternatively: `npm test`
 ```
 
 License
 -------
-The MIT License (Expat). See the license file for details.
+The MIT License (Expat). See the [license file](LICENSE) for details.
