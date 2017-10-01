@@ -24,12 +24,13 @@
   },
   "keywords": [
     "cli",
-    "readme",
-    "md",
-    "markdown",
+    "commonmark",
     "docs",
     "documentation",
-    "generator"
+    "generator",
+    "md",
+    "markdown",
+    "readme"
   ],
   "author": "James Benner <james.benner@gmail.com> (http://www.jamesbenner.com/)",
   "license": "MIT",
