@@ -10,11 +10,13 @@ const version = pkg.version;
 
 describe('readme-md-cli', function () {
     beforeAll(function () {
-        shellSync('npm link');
+        /** @todo Possibly fallback to: `shellSync('npm link');`? */
+        shellSync('yarn link');
     });
 
     afterAll(function () {
-        shellSync(`npm -g uninstall ${pkg.name}`);
+        /** @todo Possibly fallback to: `shellSync(`npm -g uninstall ${pkg.name}`);`? */
+        shellSync(`yarn unlink ${pkg.name}`);
     });
 
     it('is an available system command', function () {
