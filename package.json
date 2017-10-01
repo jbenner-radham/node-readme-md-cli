@@ -40,6 +40,7 @@
   "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
   "dependencies": {
     "chalk": "^2.0.1",
+    "js-yaml": "^3.10.0",
     "lodash.get": "^4.4.2",
     "log-symbols": "^2.0.0",
     "meow": "^3.7.0",

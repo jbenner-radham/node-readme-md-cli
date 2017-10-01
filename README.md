@@ -1,11 +1,11 @@
 readme-md-cli
 =============
-A CLI for the `readme-md` module (better description forthcoming...)
+A CLI for the `readme-md` module.
 
 Install
 -------
 ```sh
-$ yarn add readme-md-cli # Or alternatively: `npm install --save readme-md-cli`
+$ yarn global add readme-md-cli # Or alternatively: `npm install --global readme-md-cli`
 ```
 
 Usage
