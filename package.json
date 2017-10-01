@@ -1,19 +1,19 @@
 {
   "name": "readme-md-cli",
   "version": "0.2.0",
-  "description": "A CLI for the `readme-md` module (better description forthcoming...)",
-  "main": "./lib/index.js",
+  "description": "A CLI for the `readme-md` module.",
+  "main": "lib/index.js",
   "bin": {
-    "readme-md": "./bin/cli.js"
+    "readme-md": "bin/cli.js"
   },
   "directories": {
     "example": "example",
     "lib": "lib"
   },
   "scripts": {
-    "lint": "eslint {bin,lib,spec}",
     "prepublishOnly": "trevor",
-    "test": "npm run lint && jasmine"
+    "pretest": "eslint {bin,lib,spec}",
+    "test": "jasmine"
   },
   "engines": {
     "node": ">=6.11"
