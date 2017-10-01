@@ -23,6 +23,8 @@ $ readme-md --help
       --version, -v    Display the application version.
 ```
 
+For more detailed information see the [doc directory](doc/).
+
 Testing
 -------
 ```sh

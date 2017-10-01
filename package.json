@@ -7,6 +7,7 @@
     "readme-md": "bin/cli.js"
   },
   "directories": {
+    "doc": "doc",
     "example": "example",
     "lib": "lib"
   },
