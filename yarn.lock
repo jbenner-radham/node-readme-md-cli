@@ -789,6 +789,10 @@ map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
 
+md-writer@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/md-writer/-/md-writer-0.2.0.tgz#a78fc2112656b41603c863a13954febccecf4578"
+
 meow@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
@@ -1034,12 +1038,13 @@ readable-stream@^2.0.0, readable-stream@^2.2.2:
     string_decoder "~1.0.3"
     util-deprecate "~1.0.1"
 
-readme-md@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.1.0.tgz#cbc8d492219731c88438b8100e353b991d397941"
+readme-md@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.3.0.tgz#ce0eda901a4699c823a847df353cff3f3b79da1c"
   dependencies:
     lodash.escape "^4.0.1"
     lodash.get "^4.4.2"
+    md-writer "^0.2.0"
 
 redent@^1.0.0:
   version "1.0.0"

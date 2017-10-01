@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Added automatic `example/cli/usage.md` inclusion.
 - Added project level `.config/readme-md.json` parsing.
+- Automatically likifies the license file if `LICENSE`, `LICENSE.md`, or `LICENSE.txt` are present.
 
 ### Changed
 - Refactor to allow Node.js `>=6.11` environments.
