@@ -58,6 +58,51 @@ $ npm install --save package-name
 ```
 ````
 
+### Testing Section
+This section consists of a level two header titled "Testing" and a body
+containing a fenced code block with the package testing command if the package's
+`scripts.test` property is defined and a non-empty string.
+
+Given the following package:
+
+```json
+{
+  "scripts": {
+    "test": "cli-test-utility"
+  }
+}
+```
+
+The following section markup will be output:
+
+````md
+Testing
+-------
+```sh
+$ npm test
+```
+````
+
+### License Section
+This section consists of a level two header titled "License" and a body
+containing a declaration of the package's license status.
+
+Given the following package:
+
+```json
+{
+  "license": "EXAMPLE"
+}
+```
+
+The following section markup will be output:
+
+```md
+License
+-------
+The Example License. See the license file for details.
+```
+
 Project Level Configuration
 ---------------------------
 Project specific configuration is stored in `.config/readme-md.yml` file
