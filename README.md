@@ -1,6 +1,6 @@
 readme-md-cli
 =============
-A CLI for the [readme-md](https://www.npmjs.com/package/readme-md) module.
+Automatically generate a readme for your project from the CLI.
 
 Install
 -------

@@ -7,6 +7,7 @@ const {bold} = require('chalk');
 const logSymbols = require('log-symbols');
 const meow = require('meow');
 const path = require('path');
+const yaml = require('js-yaml');
 
 let alias = {h: 'help', v: 'version'};
 let usage = `
@@ -40,7 +41,9 @@ try {
 }
 
 try {
-    config = require(`${cwd}/.config/readme-md.json`);
+    config = yaml.load(
+        fs.readFileSync(`${cwd}/.config/readme-md.yml`).toString()
+    );
 } catch (_) { /* Do nothing. */ }
 
 let parameters = Object.assign({}, {pkg}, config);
