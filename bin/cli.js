@@ -4,10 +4,12 @@
 
 const app = require('../');
 const {bold} = require('chalk');
+const get = require('lodash.get');
 const logSymbols = require('log-symbols');
 const meow = require('meow');
 const path = require('path');
 const yaml = require('js-yaml');
+const yarnLockfileExists = require('../lib/yarn-lockfile-exists');
 
 let alias = {h: 'help', v: 'version'};
 let usage = `
@@ -45,6 +47,8 @@ try {
         fs.readFileSync(`${cwd}/.config/readme-md.yml`).toString()
     );
 } catch (_) { /* Do nothing. */ }
+
+config['prefer-yarn'] = get(config, 'prefer-yarn', yarnLockfileExists());
 
 let parameters = Object.assign({}, {pkg}, config);
 let readme = app(parameters);
