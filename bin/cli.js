@@ -4,6 +4,7 @@
 
 const app = require('../');
 const {bold} = require('chalk');
+const fs = require('fs-extra');
 const get = require('lodash.get');
 const logSymbols = require('log-symbols');
 const meow = require('meow');
@@ -50,7 +51,7 @@ try {
 
 config['prefer-yarn'] = get(config, 'prefer-yarn', yarnLockfileExists());
 
-let parameters = Object.assign({}, {pkg}, config);
+let parameters = Object.assign({}, {pkg}, {config});
 let readme = app(parameters);
 
 console.log(readme);
