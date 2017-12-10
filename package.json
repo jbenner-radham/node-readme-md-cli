@@ -1,6 +1,6 @@
 {
   "name": "readme-md-cli",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Automatically generate a readme for your project from the CLI.",
   "main": "lib/index.js",
   "bin": {
