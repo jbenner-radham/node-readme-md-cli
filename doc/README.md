@@ -58,6 +58,15 @@ $ npm install --save package-name
 ```
 ````
 
+### Usage Section
+A usage section can be drafted and stored in a
+`.config/readme-md/sections/usage.md` file relative to your project root. Given
+that `$PROJECT` represents the path to a project then an absolute path
+representation would be `$PROJECT/.config/readme-md/sections/usage.md`.
+
+The contents of this Markdown document will be trimed and posted directly below
+a "Usage" header following the "Install" section.
+
 ### Testing Section
 This section consists of a level two header titled "Testing" and a body
 containing a fenced code block with the package testing command if the package's
@@ -100,7 +109,7 @@ The following section markup will be output:
 ```md
 License
 -------
-The Example License. See the license file for details.
+The EXAMPLE License. See the license file for details.
 ```
 
 Project Level Configuration
