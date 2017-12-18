@@ -45,7 +45,7 @@ try {
 
 try {
     config = yaml.load(
-        fs.readFileSync(`${cwd}/.config/readme-md.yml`).toString()
+        fs.readFileSync(`${cwd}/.config/readme-md/config.yml`).toString()
     );
 } catch (_) { /* Do nothing. */ }
 
