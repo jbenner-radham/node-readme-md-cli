@@ -1358,3 +1358,7 @@ yamljs@^0.2.8:
   dependencies:
     argparse "^1.0.7"
     glob "^7.0.5"
+
+yarn-lockfile-exists@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/yarn-lockfile-exists/-/yarn-lockfile-exists-0.2.0.tgz#217c9e08099dce6ac05e0f4b7e75faccad6f2282"

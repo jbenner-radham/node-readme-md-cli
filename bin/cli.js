@@ -10,7 +10,7 @@ const logSymbols = require('log-symbols');
 const meow = require('meow');
 const path = require('path');
 const yaml = require('js-yaml');
-const yarnLockfileExists = require('../lib/yarn-lockfile-exists');
+const yarnLockfileExists = require('yarn-lockfile-exists');
 
 let alias = {h: 'help', v: 'version'};
 let usage = `
