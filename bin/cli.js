@@ -4,13 +4,10 @@
 
 const app = require('../');
 const {bold} = require('chalk');
-const fs = require('fs-extra');
-const get = require('lodash.get');
+const loadConfig = require('../lib/load-config');
 const logSymbols = require('log-symbols');
 const meow = require('meow');
 const path = require('path');
-const yaml = require('js-yaml');
-const yarnLockfileExists = require('yarn-lockfile-exists');
 
 let alias = {h: 'help', v: 'version'};
 let usage = `
@@ -25,7 +22,7 @@ let usage = `
 meow(usage, {alias});
 
 let bin = path.basename(process.argv.slice(1).shift());
-let config = {};
+let config = loadConfig();
 let cwd = process.cwd();
 let helpCmd = `${bin} --help`;
 let pkg;
@@ -42,14 +39,6 @@ try {
     console.error(logSymbols.error, ...messages);
     process.exit(1);
 }
-
-try {
-    config = yaml.load(
-        fs.readFileSync(`${cwd}/.config/readme-md/config.yml`).toString()
-    );
-} catch (_) { /* Do nothing. */ }
-
-config['prefer-yarn'] = get(config, 'prefer-yarn', yarnLockfileExists());
 
 let parameters = Object.assign({}, {pkg}, {config});
 let readme = app(parameters);
