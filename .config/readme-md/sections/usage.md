@@ -1,7 +1,7 @@
 ```sh
 $ readme-md --help
 
-  A CLI for the `readme-md` module.
+  Automatically generate a readme for your project from the CLI.
 
   Usage
       $ readme-md
