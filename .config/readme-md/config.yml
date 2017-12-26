@@ -2,6 +2,7 @@
 ---
 badges:
   style: flat-square
-  npm: true # `vendors: []`, `list: []`, or `display: []` instead to avoid name collisions?
+  license: true
+  npm: true # `vendors: []`, `list: []`, `render(ers?): []`, or `display: []` instead to avoid name collisions?
 see-also:
   readme-md @ npm: https://www.npmjs.com/package/readme-md
