@@ -1,7 +1,7 @@
 # Config file for [readme-md-cli](https://www.npmjs.com/package/readme-md-cli).
 ---
 badges:
-  style: for-the-badge
-  travis: true
+  style: flat-square
+  npm: true # `vendors: []`, `list: []`, or `display: []` instead to avoid name collisions?
 see-also:
   readme-md @ npm: https://www.npmjs.com/package/readme-md
