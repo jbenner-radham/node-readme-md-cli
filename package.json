@@ -14,7 +14,7 @@
   "scripts": {
     "prepublishOnly": "trevor",
     "pretest": "eslint {bin,lib,spec}",
-    "test": "jasmine"
+    "test": "nyc jasmine"
   },
   "engines": {
     "node": ">=6.11"
@@ -55,6 +55,7 @@
     "eslint": "^4.3.0",
     "execa": "^0.7.0",
     "jasmine": "^2.7.0",
+    "nyc": "^11.4.1",
     "tempy": "^0.1.0",
     "trevor": "^2.3.0"
   }
