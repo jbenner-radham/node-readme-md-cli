@@ -1,4 +1,7 @@
 # Config file for [readme-md-cli](https://www.npmjs.com/package/readme-md-cli).
 ---
+badges:
+  style: for-the-badge
+  travis: true
 see-also:
   readme-md @ npm: https://www.npmjs.com/package/readme-md
