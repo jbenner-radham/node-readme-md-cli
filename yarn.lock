@@ -931,6 +931,16 @@ is-extglob@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-1.0.0.tgz#ac468177c4943405a092fc8f29760c6ffc6206c0"
 
+is-file-in-cwd@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/is-file-in-cwd/-/is-file-in-cwd-0.1.0.tgz#97070f22a5d7edc324b309e2999c4987680a0f0d"
+  dependencies:
+    is-file "^1.0.0"
+
+is-file@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/is-file/-/is-file-1.0.0.tgz#28a44cfbd9d3db193045f22b65fce8edf9620596"
+
 is-finite@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-finite/-/is-finite-1.0.2.tgz#cc6677695602be550ef11e8b4aa6305342b6d0aa"
