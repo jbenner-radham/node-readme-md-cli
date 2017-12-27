@@ -12,6 +12,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "readme": "./bin/cli.js > README.md",
     "prepublishOnly": "trevor",
     "pretest": "eslint {bin,lib,spec}",
     "test": "nyc jasmine"

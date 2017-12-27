@@ -1,6 +1,7 @@
 readme-md-cli
 =============
 [![npm](https://img.shields.io/npm/v/readme-md-cli.svg?style=flat-square)](https://www.npmjs.com/package/readme-md-cli)
+[![node](https://img.shields.io/node/v/readme-md-cli.svg?style=flat-square)](https://nodejs.org/)
 [![license](https://img.shields.io/github/license/jbenner-radham/node-readme-md-cli.svg?style=flat-square)](LICENSE)
 
 Automatically generate a readme for your project from the CLI.
