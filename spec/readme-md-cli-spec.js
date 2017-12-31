@@ -18,7 +18,13 @@ describe('readme-md-cli', function () {
     });
 
     beforeEach(function () {
-        if (process.env.TRAVIS == 'true') {
+        /**
+         * Sometimes the builds run slow on Travis-CI so crank up the timeout
+         * just in case.
+         *
+         * @see https://docs.travis-ci.com/user/environment-variables#Default-Environment-Variables
+         */
+        if (process.env.TRAVIS === 'true') {
             jasmine.DEFAULT_TIMEOUT_INTERVAL = 25000;
         }
     });
