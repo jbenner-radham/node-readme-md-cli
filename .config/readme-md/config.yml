@@ -5,5 +5,6 @@ badges:
   license: true
   node: true
   npm: true # `vendors: []`, `list: []`, `render(ers?): []`, or `display: []`, `providers: []` instead to avoid name collisions?
+  travis-ci: true
 see-also:
   readme-md @ npm: https://www.npmjs.com/package/readme-md
