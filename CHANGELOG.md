@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Node version badge rendering.
 - Travis-CI badge rendering.
 
+### Changed
+- Required [Node.js](https://nodejs.org/) version is now v7.0.0.
+
 [0.7.0] - 2017-12-26
 --------------------
 ### Added

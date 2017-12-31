@@ -18,7 +18,7 @@
     "test": "nyc jasmine"
   },
   "engines": {
-    "node": ">=6.11"
+    "node": ">=7"
   },
   "preferGlobal": true,
   "repository": {
@@ -48,17 +48,17 @@
     "js-yaml": "^3.10.0",
     "lodash.get": "^4.4.2",
     "log-symbols": "^2.0.0",
-    "meow": "^3.7.0",
+    "meow": "^4.0.0",
     "readme-md": "^0.6.0",
     "yarn-lockfile-exists": "^0.2.0"
   },
   "devDependencies": {
     "command-exists": "^1.2.2",
-    "eslint": "^4.3.0",
-    "execa": "^0.7.0",
-    "jasmine": "^2.7.0",
+    "eslint": "^4.14.0",
+    "execa": "^0.8.0",
+    "jasmine": "^2.8.0",
     "nyc": "^11.4.1",
-    "tempy": "^0.1.0",
+    "tempy": "^0.2.1",
     "trevor": "^2.3.0"
   }
 }
