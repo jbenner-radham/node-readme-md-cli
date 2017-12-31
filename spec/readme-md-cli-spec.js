@@ -10,13 +10,15 @@ const version = pkg.version;
 
 describe('readme-md-cli', function () {
     beforeAll(function () {
-        /** @todo Possibly fallback to: `shellSync('npm link');`? */
         shellSync('yarn link');
     });
 
     afterAll(function () {
-        /** @todo Possibly fallback to: `shellSync(`npm -g uninstall ${pkg.name}`);`? */
         shellSync(`yarn unlink ${pkg.name}`);
+    });
+
+    beforeEach(function () {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     });
 
     it('is an available system command', function () {
