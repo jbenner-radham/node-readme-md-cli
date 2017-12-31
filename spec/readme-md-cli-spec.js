@@ -18,7 +18,9 @@ describe('readme-md-cli', function () {
     });
 
     beforeEach(function () {
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+        if (process.env.TRAVIS == 'true') {
+            jasmine.DEFAULT_TIMEOUT_INTERVAL = 25000;
+        }
     });
 
     it('is an available system command', function () {
