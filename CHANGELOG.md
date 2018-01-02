@@ -8,8 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [0.8.0] - 2017-12-31
 --------------------
 ### Added
-- Node version badge rendering.
-- Travis-CI badge rendering.
+- [Node.js](https://nodejs.org/) version badge rendering.
+- [Travis-CI](http://travis-ci.org/) badge rendering.
 
 ### Changed
 - Required [Node.js](https://nodejs.org/) version is now v7.0.0.
