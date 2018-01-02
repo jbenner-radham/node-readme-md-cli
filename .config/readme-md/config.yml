@@ -2,9 +2,10 @@
 ---
 badges:
   style: flat-square
-  license: true
-  node: true
-  npm: true # `vendors: []`, `list: []`, `render(ers?): []`, or `display: []`, `providers: []` instead to avoid name collisions?
-  travis-ci: true
+  render:
+    - license
+    - node.js
+    - npm
+    - travis-ci
 see-also:
   readme-md @ npm: https://www.npmjs.com/package/readme-md
