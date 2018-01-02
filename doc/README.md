@@ -114,10 +114,10 @@ The EXAMPLE License. See the license file for details.
 
 Project Level Configuration
 ---------------------------
-Project specific configuration is stored in `.config/readme-md.yml` file
+Project specific configuration is stored in `.config/readme-md/config.yml` file
 relative to your project root. Given that `$PROJECT` represents the path to a
 project then an absolute path representation would be
-`$PROJECT/.config/readme-md.yml`.
+`$PROJECT/.config/readme-md/config.yml`.
 
 Parameters are defined via the following properties:
 
