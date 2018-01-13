@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Addressed a potential license badge rendering bug.
 - Updated the name of project level config from `readme-md.yml` to `config.yml` in the docs.
+- Update Travis badge alt text to "build" to acurately describe the image.
 
 [0.8.0] - 2017-12-31
 --------------------
