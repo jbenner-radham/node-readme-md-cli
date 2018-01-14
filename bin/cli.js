@@ -23,6 +23,9 @@ let usage = `
   Options
       --help, -h       Display this message.
       --version, -v    Display the application version.
+
+  When invoked with the "init" sub-command a project level runtime
+  configuration is initialized.
 `;
 
 const cli = meow(usage, {alias});
@@ -40,10 +43,10 @@ if (cli.input.includes('init')) {
     }
 
     let config = fs.readFileSync('../template/config.yml').toString();
-    let configPath = `${cwd}/.config/readme-md/config.yml`;
+    let configPath = '.config/readme-md/config.yml';
     let message = `Successfully initialized a project config to ${bold(configPath)}.`
 
-    fs.outputFileSync(configPath, config);
+    fs.outputFileSync(`${cwd}/.config/readme-md/config.yml`, config);
     console.log(logSymbols.success, message);
     process.exit(0);
 }
