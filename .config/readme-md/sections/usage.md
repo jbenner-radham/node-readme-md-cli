@@ -4,7 +4,7 @@ $ readme-md --help
   Automatically generate a readme for your project from the CLI.
 
   Usage
-      $ readme-md
+      $ readme-md [init]
 
   Options
       --help, -h       Display this message.
