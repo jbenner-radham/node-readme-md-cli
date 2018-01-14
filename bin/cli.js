@@ -5,7 +5,6 @@
 const app = require('../');
 const {bold} = require('chalk');
 const directoryExists = require('../lib/directory-exists');
-const fileExists = require('file-exists');
 const fs = require('fs-extra');
 const loadConfig = require('../lib/load-config');
 const logSymbols = require('log-symbols');
