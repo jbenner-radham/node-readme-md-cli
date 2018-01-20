@@ -178,6 +178,89 @@ project then an absolute path representation would be
 
 Parameters are defined via the following properties:
 
+### `badges`
+Enables and defines the rendering of assorted badges related to the project as
+provided by [shields.io](http://shields.io/).
+
+To utilize badge generation `readme-md` requires that your `package.json`'s
+[repository](https://docs.npmjs.com/files/package.json#repository) property is
+not only defined but also using a [GitHub](https://github.com/) hyperlink.
+
+The [repository](https://docs.npmjs.com/files/package.json#repository) property
+must be defined in your `package.json` using the following declaration style:
+
+```json
+{
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/example-user/example-project.git"
+  }
+}
+```
+
+Currently the following "shortcut syntax" is _**not**_ supported:
+
+```json
+{
+  "repository": "example-user/example-project"
+}
+```
+
+In addition the prefixed "shortcut syntax" is currently _**not**_ supported as
+well:
+
+```json
+{
+  "repository": "github:example-user/example-project"
+}
+```
+
+_**Note:** If you do not have a
+[repository](https://docs.npmjs.com/files/package.json#repository) defined or
+if it is defined in a currently unsupported syntax no badges will render. The
+badge rendering process will silently fail but will not interrupt the rendering
+of the project readme otherwise._
+
+When `readme-md init` is invoked for a project the following default settings
+are defined:
+
+```yml
+badges:
+  style: flat-square
+  render:
+    - license
+    - node.js
+    - npm
+    - travis-ci
+```
+
+Note that if your have no project level config as defined by `readme-md init`
+these are still the defaults applied when invoking `readme-md`.
+
+To change the graphical style of the badges simply define `badges.style` as your
+desired choice out of "plastic", "flat", "flat-square", "for-the-badge", or
+"social" as described [here](http://shields.io/#styles).
+
+The badges rendered can be changed by simply adding or removing them from the
+`badges.render` array. For instance, to only display a
+[Travis-CI](https://travis-ci.org/) build badge you would define your
+configuration like so:
+
+```yml
+badges:
+  style: flat-square
+  render:
+    - travis-ci
+```
+
+To disable badge rendering altogether the `badges.render` property needs to be
+set to an empty array like so:
+
+```yml
+badges:
+  render: []
+```
+
 ### `see-also`
 Enables and defines the contents of a "See Also" section positioned at the `-1`
 section index. An object consisting of `<link text>: <target uri>` key/value
@@ -200,7 +283,7 @@ See Also
 - [IETF](https://www.ietf.org/)
 ```
 
-Reference
----------
-- [package.json Spec](https://docs.npmjs.com/files/package.json)
+See Also
+--------
+- [Package.json Spec](https://docs.npmjs.com/files/package.json)
 - [YAML Spec](http://www.yaml.org/spec/1.2/spec.html)
