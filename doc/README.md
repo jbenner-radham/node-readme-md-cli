@@ -58,6 +58,51 @@ $ npm install --save package-name
 ```
 ````
 
+However, if a `yarn.lock` file is present in the root of the project directory
+the following variant markup will be output:
+
+````md
+Install
+-------
+```sh
+$ yarn add package-name # Or alternatively: `npm install --save package-name`
+```
+````
+
+Global install instructions will be output in the event of
+[preferGlobal](https://docs.npmjs.com/files/package.json#preferglobal) being
+defined as `true` in the project's `package.json`.
+
+Given the following package:
+
+```json
+{
+  "name": "package-name",
+  "preferGlobal": true
+}
+```
+
+The following section markup will be output:
+
+````md
+Install
+-------
+```sh
+$ npm install --global package-name
+```
+````
+
+However, if a `yarn.lock` file is present in the root of the project directory
+the following variant markup will be output:
+
+````md
+Install
+-------
+```sh
+$ yarn global add package-name # Or alternatively: `npm install --global package-name`
+```
+````
+
 ### Usage Section
 A usage section can be drafted and stored in a
 `.config/readme-md/sections/usage.md` file relative to your project root. Given
@@ -77,7 +122,7 @@ Given the following package:
 ```json
 {
   "scripts": {
-    "test": "cli-test-utility"
+    "test": "cli-test-bin"
   }
 }
 ```
