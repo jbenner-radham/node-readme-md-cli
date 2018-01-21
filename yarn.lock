@@ -1753,9 +1753,9 @@ readable-stream@^2.0.0, readable-stream@^2.2.2:
     string_decoder "~1.0.3"
     util-deprecate "~1.0.1"
 
-readme-md@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.7.0.tgz#4176f667d6c1b3b97cf6b956db7054ec2fe9aaf3"
+readme-md@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.8.0.tgz#cd161d5efd44ecaa10768f09038c6a972c0fc2f4"
   dependencies:
     lodash.escape "^4.0.1"
     lodash.get "^4.4.2"
