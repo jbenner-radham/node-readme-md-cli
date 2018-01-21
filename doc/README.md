@@ -15,8 +15,9 @@ gathered package data:
 ### Title Section
 This section consists of a level one header which acts as the document title and
 a brief project description in the body. The title is populated with the value
-of the package's `name` property while the body is populated with the value of
-the package's `description` property.
+of the package's [name](https://docs.npmjs.com/files/package.json#name) property
+while the body is populated with the value of the package's
+[description](https://docs.npmjs.com/files/package.json#description-1) property.
 
 Given the following package:
 
@@ -38,7 +39,7 @@ A brief description.
 ### Install Section
 This section consists of a level two header titled "Install" and a body
 containing a fenced code block with the package install command derived from
-the package's `name` property.
+the package's [name](https://docs.npmjs.com/files/package.json#name) property.
 
 Given the following package:
 
@@ -58,8 +59,9 @@ $ npm install --save package-name
 ```
 ````
 
-However, if a `yarn.lock` file is present in the root of the project directory
-the following variant markup will be output:
+However, if a [yarn.lock](https://yarnpkg.com/en/docs/yarn-lock) file is present
+in the root of the project directory the following variant markup will be
+output:
 
 ````md
 Install
@@ -92,8 +94,9 @@ $ npm install --global package-name
 ```
 ````
 
-However, if a `yarn.lock` file is present in the root of the project directory
-the following variant markup will be output:
+However, if a [yarn.lock](https://yarnpkg.com/en/docs/yarn-lock) file is present
+in the root of the project directory the following variant markup will be
+output:
 
 ````md
 Install
@@ -234,8 +237,8 @@ badges:
     - travis-ci
 ```
 
-Note that if your have no project level config as defined by `readme-md init`
-these are still the defaults applied when invoking `readme-md`.
+_**Note:** If your have no project level config as defined by `readme-md init`
+these are still the defaults applied when invoking `readme-md`._
 
 To change the graphical style of the badges simply define `badges.style` as your
 desired choice out of "plastic", "flat", "flat-square", "for-the-badge", or
