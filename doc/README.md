@@ -55,7 +55,7 @@ The following section markup will be output:
 Install
 -------
 ```sh
-$ npm install --save package-name
+$ npm install package-name
 ```
 ````
 
@@ -67,7 +67,7 @@ output:
 Install
 -------
 ```sh
-$ yarn add package-name # Or alternatively: `npm install --save package-name`
+$ yarn add package-name # Or alternatively: `npm install package-name`
 ```
 ````
 
@@ -267,7 +267,7 @@ badges:
 ### `see-also`
 Enables and defines the contents of a "See Also" section positioned at the `-1`
 section index. An object consisting of `<link text>: <target uri>` key/value
-pairs e.g. _(`Example: http://www.example.org/`)_.
+pairs _e.g. (`Example: http://www.example.org/`)_.
 
 Given the following config:
 
