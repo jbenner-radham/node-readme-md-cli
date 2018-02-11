@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ------------
 ### Changed
 - Refined the project documentation.
-- Updated `readme-md` dependency.
+- Updated `readme-md` dependency to [v0.8.0](https://github.com/jbenner-radham/node-readme-md/tree/v0.8.0).
 
 [0.10.0] - 2018-01-20
 ---------------------
