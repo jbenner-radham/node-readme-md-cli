@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Refined the project documentation.
 - Updated `readme-md` dependency to [v0.8.0](https://github.com/jbenner-radham/node-readme-md/tree/v0.8.0).
+- If a description is specified in the `config.yml` override the `package.json` description value.
+
+### Fixed
+- Fixed breakage that occured when used on projects that did not have a `repository.url` property defined in their `package.json`.
 
 [0.10.0] - 2018-01-20
 ---------------------
