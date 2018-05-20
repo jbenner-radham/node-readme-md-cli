@@ -44,21 +44,21 @@
   "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
   "dependencies": {
     "chalk": "^2.0.1",
-    "fs-extra": "^5.0.0",
+    "fs-extra": "^6.0.1",
     "is-file-in-cwd": "^0.1.0",
     "js-yaml": "^3.11.0",
     "lodash.get": "^4.4.2",
     "lodash.result": "^4.5.2",
     "log-symbols": "^2.2.0",
-    "meow": "^4.0.1",
+    "meow": "^5.0.0",
     "readme-md": "^0.8.0",
     "yarn-lockfile-exists": "^0.2.0"
   },
   "devDependencies": {
     "command-exists": "^1.2.2",
     "eslint": "^4.19.1s",
-    "execa": "^0.8.0",
-    "jasmine": "^2.99.0",
+    "execa": "^0.10.0",
+    "jasmine": "^3.1.0",
     "nyc": "^11.8.0",
     "tempy": "^0.2.1",
     "trevor": "^2.3.0"
