@@ -15,7 +15,8 @@
     "readme": "./bin/cli.js > README.md",
     "prepublishOnly": "trevor",
     "pretest": "eslint {bin,lib,spec}",
-    "test": "nyc jasmine"
+    "test": "nyc jasmine",
+    "test:lcov": "nyc --reporter=lcov jasmine"
   },
   "engines": {
     "node": ">=7"
