@@ -2423,9 +2423,9 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-trevor@^2.3.0:
+"trevor@github:jbenner-radham/trevor#fix-for-missing-onbuild-images":
   version "2.3.0"
-  resolved "https://registry.yarnpkg.com/trevor/-/trevor-2.3.0.tgz#f128b78489fc0b04be58fdc106695577906cda6f"
+  resolved "https://codeload.github.com/jbenner-radham/trevor/tar.gz/3502f827ed058cd268e51228cb14fe9e902f93ed"
   dependencies:
     arrify "^1.0.1"
     chalk "^1.1.3"

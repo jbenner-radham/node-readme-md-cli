@@ -61,6 +61,6 @@
     "jasmine": "^2.99.0",
     "nyc": "^11.8.0",
     "tempy": "^0.2.1",
-    "trevor": "^2.3.0"
+    "trevor": "github:jbenner-radham/trevor#fix-for-missing-onbuild-images"
   }
 }
