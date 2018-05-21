@@ -1,7 +1,5 @@
 readme-md-cli
 =============
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/jbenner-radham/node-readme-md-cli.svg?style=flat-square)](https://greenkeeper.io/)
 [![npm](https://img.shields.io/npm/v/readme-md-cli.svg?style=flat-square)](https://www.npmjs.com/package/readme-md-cli)
 [![node](https://img.shields.io/node/v/readme-md-cli.svg?style=flat-square)](https://nodejs.org/)
 [![build](https://img.shields.io/travis/jbenner-radham/node-readme-md-cli.svg?style=flat-square)](https://travis-ci.org/jbenner-radham/node-readme-md-cli)
