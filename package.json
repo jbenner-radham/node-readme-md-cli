@@ -44,7 +44,7 @@
   "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
   "dependencies": {
     "chalk": "^2.0.1",
-    "fs-extra": "^6.0.1",
+    "fs-extra": "^7.0.0",
     "is-file-in-cwd": "^0.1.0",
     "js-yaml": "^3.11.0",
     "lodash.get": "^4.4.2",
