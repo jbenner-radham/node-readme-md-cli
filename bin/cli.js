@@ -5,9 +5,10 @@
 const app = require('../');
 const {bold} = require('chalk');
 const directoryExists = require('../lib/directory-exists');
-const fs = require('fs-extra');
+const fs = require('fs');
 const loadConfig = require('../lib/load-config');
 const logSymbols = require('log-symbols');
+const makeDir = require('make-dir');
 const meow = require('meow');
 
 let alias = {h: 'help', v: 'version'};
@@ -27,9 +28,10 @@ let usage = `
 `;
 
 const cli = meow(usage, {alias});
+const configDirectory = `${cwd}/.config/readme-md`;
 
 if (cli.input.includes('init')) {
-    if (directoryExists(`${cwd}/.config/readme-md`)) {
+    if (directoryExists(configDirectory)) {
         let messages = [
             `A preexisting ${bold('.config/readme-md')} directory was found.`,
             `Did you mean to initialize in another directory?`,
@@ -44,7 +46,8 @@ if (cli.input.includes('init')) {
     let configPath = '.config/readme-md/config.yml';
     let message = `Successfully initialized a project config to ${bold(configPath)}.`
 
-    fs.outputFileSync(`${cwd}/.config/readme-md/config.yml`, config);
+    makeDir.sync(configDirectory);
+    fs.writeFileSync(`${configDirectory}/config.yml`, config);
     console.log(logSymbols.success, message);
     process.exit(0);
 }
