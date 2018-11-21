@@ -9,15 +9,14 @@ const fs = require('fs-extra');
 const loadConfig = require('../lib/load-config');
 const logSymbols = require('log-symbols');
 const meow = require('meow');
-const path = require('path');
 
 let alias = {h: 'help', v: 'version'};
 let cwd = process.cwd();
-let bin = path.basename(process.argv.slice(1).shift());
+let bin = 'readme-md';
 let helpCmd = `${bin} --help`;
 let usage = `
   Usage
-      $ readme-md [init]
+      $ ${bin} [init]
 
   Options
       --help, -h       Display this message.
