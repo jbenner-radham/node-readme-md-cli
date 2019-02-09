@@ -1,6 +1,6 @@
 'use strict';
 
-const {any} = jasmine;
+const { any } = jasmine;
 const directoryExists = require('../lib/directory-exists');
 const path = require('path');
 

@@ -2,7 +2,7 @@
 
 const commandExistsSync = require('command-exists').sync;
 const pkg = require('../package.json');
-const {shell, shellSync} = require('execa');
+const { shell, shellSync } = require('execa');
 const tempy = require('tempy');
 
 const bin = Object.keys(pkg.bin).shift();
@@ -61,7 +61,7 @@ describe('readme-md-cli', function () {
     it('should exit with error code `1` if called in a directory without a `package.json` file', function (done) {
         const cwd = tempy.directory();
 
-        shell(bin, {cwd}).then(() => done.fail())
+        shell(bin, { cwd }).then(() => done.fail())
             .catch(error => (error.code === 1) ? done() : done.fail());
     });
 });

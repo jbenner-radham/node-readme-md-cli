@@ -3,7 +3,7 @@
 'use strict';
 
 const app = require('../');
-const {bold} = require('chalk');
+const { bold } = require('chalk');
 const directoryExists = require('../lib/directory-exists');
 const fs = require('fs');
 const loadConfig = require('../lib/load-config');
@@ -11,11 +11,11 @@ const logSymbols = require('log-symbols');
 const makeDir = require('make-dir');
 const meow = require('meow');
 
-let alias = {h: 'help', v: 'version'};
-let cwd = process.cwd();
-let bin = 'readme-md';
-let helpCmd = `${bin} --help`;
-let usage = `
+const alias = { h: 'help', v: 'version' };
+const cwd = process.cwd();
+const bin = 'readme-md';
+const helpCmd = `${bin} --help`;
+const usage = `
   Usage
       $ ${bin} [init]
 
@@ -27,12 +27,12 @@ let usage = `
   configuration is initialized.
 `;
 
-const cli = meow(usage, {alias});
+const cli = meow(usage, { alias });
 const configDirectory = `${cwd}/.config/readme-md`;
 
 if (cli.input.includes('init')) {
     if (directoryExists(configDirectory)) {
-        let messages = [
+        const messages = [
             `A preexisting ${bold('.config/readme-md')} directory was found.`,
             `Did you mean to initialize in another directory?`,
             `You can also run '${bold(helpCmd)}' for more info.`
@@ -42,9 +42,9 @@ if (cli.input.includes('init')) {
         process.exit(1);
     }
 
-    let config = fs.readFileSync('../template/config.yml').toString();
-    let configPath = '.config/readme-md/config.yml';
-    let message = `Successfully initialized a project config to ${bold(configPath)}.`
+    const config = fs.readFileSync('../template/config.yml').toString();
+    const configPath = '.config/readme-md/config.yml';
+    const message = `Successfully initialized a project config to ${bold(configPath)}.`;
 
     makeDir.sync(configDirectory);
     fs.writeFileSync(`${configDirectory}/config.yml`, config);
@@ -52,13 +52,13 @@ if (cli.input.includes('init')) {
     process.exit(0);
 }
 
-let config = loadConfig();
+const config = loadConfig();
 let pkg;
 
 try {
     pkg = require(`${cwd}/package.json`);
 } catch (_) {
-    let messages = [
+    const messages = [
         `No '${bold('package.json')}' file found.`,
         `Try another directory?`,
         `You can also run '${bold(helpCmd)}' for more info.`
@@ -68,7 +68,7 @@ try {
     process.exit(1);
 }
 
-let parameters = Object.assign({}, {pkg}, {config});
-let readme = app(parameters);
+const parameters = Object.assign({}, { pkg }, { config });
+const readme = app(parameters);
 
 console.log(readme);
