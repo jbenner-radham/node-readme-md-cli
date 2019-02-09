@@ -40,7 +40,7 @@ rules:
     - unix
   max-len:
     - error
-    - code: 80
+    - code: 120
       comments: 120
   no-console: off
   no-tabs:
