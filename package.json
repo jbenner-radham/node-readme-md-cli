@@ -2,50 +2,46 @@
   "name": "readme-md-cli",
   "version": "0.11.0",
   "description": "Automatically generate a readme for your project from the CLI.",
-  "main": "lib/index.js",
-  "bin": {
-    "readme-md": "bin/cli.js"
-  },
-  "directories": {
-    "doc": "doc",
-    "example": "example",
-    "lib": "lib"
-  },
-  "scripts": {
-    "readme": "./bin/cli.js > README.md",
-    "prepublishOnly": "trevor",
-    "pretest": "eslint {bin,lib,spec}",
-    "test": "nyc jasmine",
-    "test:lcov": "nyc --reporter=lcov jasmine"
-  },
-  "engines": {
-    "node": ">=7"
-  },
-  "preferGlobal": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jbenner-radham/node-readme-md-cli.git"
-  },
   "keywords": [
     "cli",
     "commonmark",
     "docs",
     "documentation",
     "generator",
-    "md",
     "markdown",
+    "md",
     "readme"
   ],
-  "author": "James Benner <james.benner@gmail.com> (http://www.jamesbenner.com/)",
-  "license": "MIT",
+  "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
   "bugs": {
     "url": "https://github.com/jbenner-radham/node-readme-md-cli/issues"
   },
-  "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbenner-radham/node-readme-md-cli.git"
+  },
+  "license": "MIT",
+  "author": "James Benner <james.benner@gmail.com> (http://www.jamesbenner.com/)",
+  "main": "lib/index.js",
+  "bin": {
+    "readme-md": "bin/cli.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "doc": "doc",
+    "example": "example"
+  },
+  "scripts": {
+    "prepublishOnly": "trevor",
+    "readme": "./bin/cli.js > README.md",
+    "pretest": "eslint {bin,lib,spec}",
+    "test": "nyc jasmine",
+    "test:lcov": "nyc --reporter=lcov jasmine"
+  },
   "dependencies": {
-    "chalk": "^2.0.1",
+    "chalk": "^2.4.2",
     "is-file-in-cwd": "^0.1.0",
-    "js-yaml": "^3.11.0",
+    "js-yaml": "^3.12.1",
     "lodash.get": "^4.4.2",
     "lodash.result": "^4.5.2",
     "log-symbols": "^2.2.0",
@@ -55,12 +51,17 @@
     "yarn-lockfile-exists": "^0.2.0"
   },
   "devDependencies": {
-    "command-exists": "^1.2.2",
-    "eslint": "^4.19.1s",
+    "command-exists": "^1.2.8",
+    "eslint": "^5.13.0",
     "execa": "^1.0.0",
-    "jasmine": "^3.1.0",
+    "jasmine": "^3.3.1",
     "nyc": "^12.0.2",
+    "sort-package-json": "^1.19.0",
     "tempy": "^0.2.1",
-    "trevor": "github:jbenner-radham/trevor#fix-for-missing-onbuild-images"
-  }
+    "trevor": "^2.4.0"
+  },
+  "engines": {
+    "node": ">=7"
+  },
+  "preferGlobal": true
 }
