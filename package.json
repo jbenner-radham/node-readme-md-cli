@@ -34,7 +34,7 @@
   "scripts": {
     "prepublishOnly": "trevor",
     "readme": "./bin/cli.js > README.md",
-    "pretest": "eslint {bin,lib,spec}",
+    "pretest": "eslint bin lib spec",
     "test": "nyc jasmine",
     "test:lcov": "nyc --reporter=lcov jasmine"
   },
