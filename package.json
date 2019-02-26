@@ -34,7 +34,7 @@
   "scripts": {
     "prepublishOnly": "trevor",
     "readme": "./bin/cli.js > README.md",
-    "pretest": "eslint bin lib spec",
+    "pretest": "eslint . --fix",
     "test": "nyc jasmine",
     "test:lcov": "nyc --reporter=lcov jasmine"
   },
@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "command-exists": "^1.2.8",
-    "eslint": "^5.13.0",
+    "eslint": "^5.14.1",
     "execa": "^1.0.0",
     "jasmine": "^3.3.1",
     "nyc": "^13.2.0",
@@ -61,7 +61,7 @@
     "trevor": "^2.4.0"
   },
   "engines": {
-    "node": ">=7"
+    "node": ">=8"
   },
   "preferGlobal": true
 }
