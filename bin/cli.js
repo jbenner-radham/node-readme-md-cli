@@ -7,6 +7,7 @@ const { bold } = require('chalk');
 const directoryExists = require('../lib/directory-exists');
 const fs = require('fs');
 const loadConfig = require('../lib/load-config');
+const loadConfigTemplate = require('../lib/load-config-template');
 const logSymbols = require('log-symbols');
 const makeDir = require('make-dir');
 const meow = require('meow');
@@ -42,7 +43,7 @@ if (cli.input.includes('init')) {
         process.exit(1);
     }
 
-    const config = fs.readFileSync('../template/config.yml').toString();
+    const config = loadConfigTemplate();
     const configPath = '.config/readme-md/config.yml';
     const message = `Successfully initialized a project config to ${bold(configPath)}.`;
 
@@ -53,7 +54,7 @@ if (cli.input.includes('init')) {
 }
 
 const config = loadConfig();
-let pkg;
+let pkg = {};
 
 try {
     pkg = require(`${cwd}/package.json`);

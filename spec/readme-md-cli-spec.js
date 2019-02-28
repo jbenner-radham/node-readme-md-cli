@@ -5,10 +5,11 @@ const pkg = require('../package.json');
 const { shell, shellSync } = require('execa');
 const tempy = require('tempy');
 
+const _describe = process.env.TRAVIS ? describe : xdescribe;
 const bin = Object.keys(pkg.bin).shift();
 const version = pkg.version;
 
-describe('readme-md-cli', function () {
+_describe('readme-md-cli', function () {
     beforeAll(function () {
         shellSync('yarn link');
     });
