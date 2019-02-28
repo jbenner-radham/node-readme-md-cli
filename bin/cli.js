@@ -12,24 +12,26 @@ const logSymbols = require('log-symbols');
 const makeDir = require('make-dir');
 const meow = require('meow');
 
-const alias = { h: 'help', v: 'version' };
 const cwd = process.cwd();
+const configDirectory = `${cwd}/.config/readme-md`;
 const bin = 'readme-md';
 const helpCmd = `${bin} --help`;
-const usage = `
-  Usage
-      $ ${bin} [init]
+const cli = meow(`
+    Usage
+        $ ${bin} [init]
 
-  Options
-      --help, -h       Display this message.
-      --version, -v    Display the application version.
+    Options
+        --help, -h       Display this message.
+        --version, -v    Display the application version.
 
-  When invoked with the "init" sub-command a project level runtime
-  configuration is initialized.
-`;
-
-const cli = meow(usage, { alias });
-const configDirectory = `${cwd}/.config/readme-md`;
+    When invoked with the "init" sub-command a project level runtime
+    configuration is initialized.
+`, {
+    flags: {
+        help: { alias: 'h' },
+        version: { alias: 'v' }
+    }
+});
 
 if (cli.input.includes('init')) {
     if (directoryExists(configDirectory)) {

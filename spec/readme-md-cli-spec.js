@@ -11,10 +11,12 @@ const version = pkg.version;
 
 _describe('readme-md-cli', function () {
     beforeAll(function () {
+        process.chdir(__dirname);
         shellSync('yarn link');
     });
 
     afterAll(function () {
+        process.chdir(__dirname);
         shellSync(`yarn unlink ${pkg.name}`);
     });
 
