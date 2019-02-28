@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [Unreleased]
 ------------
 ### Fixed
-- Addressed an issue which in some cases caused the "binary" to be reported as `cli.js` instead of `readme-md` in `std{err,out}` dialogs.
+- Addressed an issue which in some cases caused the "binary" to be reported as `cli.js` instead of `readme-md` in
+  `stderr` and `stdout` dialogs.
+- Fixed the `readme-md init` command breaking when loading its config template.
 
 [0.11.0] - 2018-05-19
 ---------------------
@@ -18,7 +20,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - If a description is specified in the `config.yml` override the `package.json` description value.
 
 ### Fixed
-- Fixed breakage that occured when used on projects that did not have a `repository.url` property defined in their `package.json`.
+- Fixed breakage that occurred when used on projects that did not have a `repository.url` property defined in their
+  `package.json`.
 
 [0.10.0] - 2018-01-20
 ---------------------
