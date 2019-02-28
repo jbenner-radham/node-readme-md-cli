@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]
 ------------
+### Changed
+- The minimum required [Node.js](https://nodejs.org/) version is now v8.
+
 ### Fixed
 - Addressed an issue which in some cases caused the "binary" to be reported as `cli.js` instead of `readme-md` in
   `stderr` and `stdout` dialogs.
