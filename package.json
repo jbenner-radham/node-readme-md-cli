@@ -59,7 +59,7 @@
     "lint-staged": "^8.1.4",
     "nyc": "^13.3.0",
     "sort-package-json": "^1.19.0",
-    "tempy": "^0.2.1",
+    "tempy": "^0.3.0",
     "trevor": "^2.4.0"
   },
   "engines": {
