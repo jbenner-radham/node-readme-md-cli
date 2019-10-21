@@ -45,7 +45,7 @@
     "lodash.get": "^4.4.2",
     "lodash.result": "^4.5.2",
     "log-symbols": "^2.2.0",
-    "make-dir": "^2.0.0",
+    "make-dir": "^3.0.0",
     "meow": "^5.0.0",
     "readme-md": "^0.8.0",
     "yarn-lockfile-exists": "^0.2.0"
