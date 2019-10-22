@@ -2,7 +2,6 @@
 
 const commandExistsSync = require('command-exists').sync;
 const pkg = require('../package.json');
-// const { shell, shellSync } = require('execa');
 const execa = require('execa');
 const tempy = require('tempy');
 
