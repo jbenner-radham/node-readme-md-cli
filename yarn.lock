@@ -3000,10 +3000,10 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-trevor@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/trevor/-/trevor-2.4.0.tgz#1a93c0f7dfd887ce1a728d1a5a5000b1e09601b6"
-  integrity sha512-7pmqijn28yamuyALUxR9iryr6w32fx+JERyRNDsTyUrXoS7Unpuc2PxwXTh82H3UJ9ix4XvQ1bPRfNmiYOTMRA==
+trevor@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/trevor/-/trevor-2.4.1.tgz#de78f32fa412930040828558749e234f85591a55"
+  integrity sha512-M1EsEOwogeI+4DTPLfy/C4DyxGmEkM8Xx69Xu8FOIivYqtNfd4qQ5fjbibSOxsaov67qw5FWsipAPa36mqcTpw==
   dependencies:
     arrify "^1.0.1"
     chalk "^1.1.3"
