@@ -39,7 +39,7 @@
     "test:lcov": "nyc --reporter=lcov jasmine"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "is-file-in-cwd": "^0.1.0",
     "js-yaml": "^3.12.2",
     "lodash.get": "^4.4.2",
