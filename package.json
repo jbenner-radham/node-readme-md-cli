@@ -32,8 +32,8 @@
     "example": "example"
   },
   "scripts": {
+    "lint": "eslint . --ext .js --ignore-path .gitignore",
     "prepare": "husky install",
-    "prepublishOnly": "trevor",
     "readme": "./bin/cli.js > README.md",
     "test": "nyc jasmine",
     "test:lcov": "nyc --reporter=lcov jasmine"
@@ -59,8 +59,7 @@
     "lint-staged": "^13.1.0",
     "nyc": "^14.1.1",
     "sort-package-json": "^1.19.0",
-    "tempy": "^0.3.0",
-    "trevor": "^2.4.0"
+    "tempy": "^0.3.0"
   },
   "engines": {
     "node": ">=8"
