@@ -21,7 +21,7 @@
     "url": "git+https://github.com/jbenner-radham/node-readme-md-cli.git"
   },
   "license": "MIT",
-  "author": "James Benner <james.benner@gmail.com> (http://www.jamesbenner.com/)",
+  "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
   "main": "lib/index.js",
   "bin": {
     "readme-md": "bin/cli.js"
