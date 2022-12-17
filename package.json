@@ -35,7 +35,6 @@
     "prepare": "husky install",
     "prepublishOnly": "trevor",
     "readme": "./bin/cli.js > README.md",
-    "pretest": "eslint . --fix",
     "test": "nyc jasmine",
     "test:lcov": "nyc --reporter=lcov jasmine"
   },
