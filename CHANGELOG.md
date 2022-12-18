@@ -7,8 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]
 ------------
-### Security
-- Upgraded vulnerable dependencies.
+### Changed
+- Change over to [ES Modules](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) from CommonJS.
+- The minimum required [Node.js](https://nodejs.org/) is now v16.
 
 [0.12.0] - 2019-02-28
 ---------------------

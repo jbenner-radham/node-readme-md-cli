@@ -22,9 +22,11 @@
   },
   "license": "MIT",
   "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
+  "type": "module",
+  "exports": "./lib/index.js",
   "main": "lib/index.js",
   "bin": {
-    "readme-md": "bin/cli.js"
+    "readme-md": "./bin/cli.js"
   },
   "directories": {
     "lib": "lib",
@@ -35,8 +37,7 @@
     "lint": "eslint . --ext .js --ignore-path .gitignore",
     "prepare": "husky install",
     "readme": "./bin/cli.js > README.md",
-    "test": "nyc jasmine",
-    "test:lcov": "nyc --reporter=lcov jasmine"
+    "test": "c8 jasmine"
   },
   "dependencies": {
     "chalk": "^2.4.2",
@@ -51,18 +52,19 @@
     "yarn-lockfile-exists": "^0.2.0"
   },
   "devDependencies": {
+    "c8": "^7.12.0",
     "command-exists": "^1.2.9",
     "eslint": "^8.30.0",
     "execa": "^3.2.0",
     "husky": "^8.0.2",
-    "jasmine": "^3.99.0",
+    "jasmine": "^4.5.0",
     "lint-staged": "^13.1.0",
-    "nyc": "^15.1.0",
     "sort-package-json": "^2.1.0",
     "tempy": "^0.3.0"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=16",
+    "yarn": "1.x"
   },
   "preferGlobal": true
 }

@@ -1,11 +1,10 @@
-'use strict';
-
-const commandExistsSync = require('command-exists').sync;
-const pkg = require('../package.json');
-const execa = require('execa');
-const tempy = require('tempy');
+import { sync as commandExistsSync } from 'command-exists';
+import execa from 'execa';
+import fs from 'node:fs';
+import tempy from 'tempy';
 
 const _describe = process.env.TRAVIS ? describe : xdescribe;
+const pkg = JSON.parse(fs.readFileSync(`${process.cwd()}/package.json`).toString());
 const [bin] = Object.keys(pkg.bin);
 const version = pkg.version;
 

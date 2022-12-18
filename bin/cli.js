@@ -1,16 +1,14 @@
 #!/usr/bin/env node
 
-'use strict';
-
-const app = require('../');
-const { bold } = require('chalk');
-const directoryExists = require('../lib/directory-exists');
-const fs = require('fs');
-const loadConfig = require('../lib/load-config');
-const loadConfigTemplate = require('../lib/load-config-template');
-const logSymbols = require('log-symbols');
-const makeDir = require('make-dir');
-const meow = require('meow');
+import app from '../index.js';
+import { bold } from 'chalk';
+import directoryExists from '../lib/directory-exists.js';
+import fs from 'node:fs';
+import loadConfig from '../lib/load-config.js';
+import loadConfigTemplate from '../lib/load-config-template.js';
+import logSymbols from 'log-symbols';
+import makeDir from 'make-dir';
+import meow from 'meow';
 
 const cwd = process.cwd();
 const configDirectory = `${cwd}/.config/readme-md`;
@@ -59,7 +57,7 @@ const config = loadConfig();
 let pkg = {};
 
 try {
-    pkg = require(`${cwd}/package.json`);
+    pkg = JSON.parse(fs.readFileSync(`${cwd}/package.json`).toString());
 } catch (_) {
     const messages = [
         `No '${bold('package.json')}' file found.`,

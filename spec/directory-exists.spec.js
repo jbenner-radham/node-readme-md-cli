@@ -1,8 +1,9 @@
-'use strict';
+import directoryExists from '../lib/directory-exists.js';
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const { any } = jasmine;
-const directoryExists = require('../lib/directory-exists');
-const path = require('path');
 
 describe('directoryExists', function () {
     it('is a function', function () {

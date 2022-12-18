@@ -1,8 +1,7 @@
-'use strict';
+import loadConfigTemplate from '../lib/load-config-template.js';
+import tempy from 'tempy';
 
 const { any } = jasmine;
-const loadConfigTemplate = require('../lib/load-config-template');
-const tempy = require('tempy');
 
 describe('loadConfigTemplate', function () {
     beforeEach(function () {
