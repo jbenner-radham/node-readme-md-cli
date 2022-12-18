@@ -1,4 +1,4 @@
-import getDefaultGitBranch from '../lib/get-default-git-branch.js';
+import getDefaultGitBranch from '../../lib/get-default-git-branch.js';
 
 const { any } = jasmine;
 

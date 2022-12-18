@@ -1,4 +1,4 @@
-import loadConfigTemplate from '../lib/load-config-template.js';
+import loadConfigTemplate from '../../lib/load-config-template.js';
 import tempy from 'tempy';
 
 const { any } = jasmine;

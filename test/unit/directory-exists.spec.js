@@ -1,4 +1,4 @@
-import directoryExists from '../lib/directory-exists.js';
+import directoryExists from '../../lib/directory-exists.js';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 

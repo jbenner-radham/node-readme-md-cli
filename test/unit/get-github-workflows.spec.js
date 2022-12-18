@@ -1,4 +1,4 @@
-import getGithubWorkflows from '../lib/get-github-workflows.js';
+import getGithubWorkflows from '../../lib/get-github-workflows.js';
 
 const { any } = jasmine;
 

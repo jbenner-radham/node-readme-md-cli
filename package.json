@@ -37,7 +37,7 @@
     "lint": "eslint . --ext .js --ignore-path .gitignore",
     "prepare": "husky install",
     "readme": "./bin/cli.js > README.md",
-    "test": "c8 jasmine"
+    "test": "c8 jasmine --config=test/support/jasmine.json"
   },
   "dependencies": {
     "chalk": "^2.4.2",
