@@ -40,8 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - If a description is specified in the `config.yml` override the `package.json` description value.
 
 ### Fixed
-- Fixed breakage that occurred when used on projects that did not have a `repository.url` property defined in their
-  `package.json`.
+- Fixed breakage that occurred when used on projects that did not have a `repository.url` property defined in their `package.json`.
 
 [0.10.0] - 2018-01-20
 ---------------------
@@ -61,7 +60,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Addressed a potential license badge rendering bug.
 - Updated the name of project level config from `readme-md.yml` to `config.yml` in the docs.
-- Update Travis badge alt text to "build" to acurately describe the image.
+- Update Travis badge alt text to "build" to accurately describe the image.
 
 [0.8.0] - 2017-12-31
 --------------------
