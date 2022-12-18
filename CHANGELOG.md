@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]
 ------------
+### Added
+- The GitHub Actions badge option has been added to the `readme-md init` config.
+
 ### Changed
 - Change over to [ES Modules](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) from CommonJS.
 - The minimum required [Node.js](https://nodejs.org/) is now v16.
@@ -15,6 +18,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Passing no license or an empty license will now output "_To be documented._" in the body of the License section.
 - Project config now supports and prioritizes `.config/readme-md/config.yaml` files. The search order goes like so: `config.yaml` then `config.yml`.
 - The filepath logic for has been changed to better accommodate Windows environments.
+
+### Removed
+- Removed support for Travis-CI badges.
 
 [0.12.0] - 2019-02-28
 ---------------------

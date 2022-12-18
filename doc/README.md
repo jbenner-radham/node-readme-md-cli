@@ -231,10 +231,10 @@ are defined:
 badges:
   style: flat-square
   render:
+    - github-actions
     - license
     - node.js
     - npm
-    - travis-ci
 ```
 
 _**Note:** If your have no project level config as defined by `readme-md init`
@@ -245,15 +245,14 @@ desired choice out of "plastic", "flat", "flat-square", "for-the-badge", or
 "social" as described [here](http://shields.io/#styles).
 
 The badges rendered can be changed by simply adding or removing them from the
-`badges.render` array. For instance, to only display a
-[Travis-CI](https://travis-ci.org/) build badge you would define your
-configuration like so:
+`badges.render` array. For instance, to only display a license badge you would
+define your configuration like so:
 
 ```yml
 badges:
   style: flat-square
   render:
-    - travis-ci
+    - license
 ```
 
 To disable badge rendering altogether the `badges.render` property needs to be
