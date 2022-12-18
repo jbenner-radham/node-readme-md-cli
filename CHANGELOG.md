@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - For packages which are MIT licensed the value "(Expat)" is no longer suffixed in the generated License section.
 - Passing no license or an empty license will now output "_To be documented._" in the body of the License section.
 - Project config now supports and prioritizes `.config/readme-md/config.yaml` files. The search order goes like so: `config.yaml` then `config.yml`.
-- The load logic for project config has been changed to better accommodate Windows environments.
+- The filepath logic for has been changed to better accommodate Windows environments.
 
 [0.12.0] - 2019-02-28
 ---------------------

@@ -9,10 +9,11 @@ import loadConfigTemplate from '../lib/load-config-template.js';
 import logSymbols from 'log-symbols';
 import makeDir from 'make-dir';
 import meow from 'meow';
+import path from 'node:path';
 
 const { bold } = chalk;
 const cwd = process.cwd();
-const configDirectory = `${cwd}/.config/readme-md`;
+const configDirectory = path.join(cwd, '.config', 'readme-md');
 const bin = 'readme-md';
 const helpCmd = `${bin} --help`;
 const cli = meow(`
@@ -36,7 +37,7 @@ const cli = meow(`
 if (cli.input.includes('init')) {
     if (directoryExists(configDirectory)) {
         const messages = [
-            `A preexisting ${bold('.config/readme-md')} directory was found.`,
+            `A preexisting ${bold(path.join('.config', 'readme-md'))} directory was found.`,
             `Did you mean to initialize in another directory?`,
             `You can also run '${bold(helpCmd)}' for more info.`
         ];
@@ -46,11 +47,11 @@ if (cli.input.includes('init')) {
     }
 
     const config = loadConfigTemplate();
-    const configPath = '.config/readme-md/config.yml';
+    const configPath = path.join('.config', 'readme-md', 'config.yaml');
     const message = `Successfully initialized a project config to ${bold(configPath)}.`;
 
     makeDir.sync(configDirectory);
-    fs.writeFileSync(`${configDirectory}/config.yml`, config);
+    fs.writeFileSync(path.join(configDirectory, 'config.yaml'), config);
     console.log(logSymbols.success, message);
     process.exit(0);
 }
@@ -59,7 +60,7 @@ const config = loadConfig();
 let pkg = {};
 
 try {
-    pkg = JSON.parse(fs.readFileSync(`${cwd}/package.json`).toString());
+    pkg = JSON.parse(fs.readFileSync(path.join(cwd, 'package.json')).toString());
 } catch (_) {
     const messages = [
         `No '${bold('package.json')}' file found.`,
