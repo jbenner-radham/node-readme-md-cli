@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import app from '../index.js';
+import app from '../lib/index.js';
 import { bold } from 'chalk';
 import directoryExists from '../lib/directory-exists.js';
 import fs from 'node:fs';
