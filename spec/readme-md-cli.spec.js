@@ -1,8 +1,11 @@
 import { sync as commandExistsSync } from 'command-exists';
+import path from 'node:path';
 import execa from 'execa';
+import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
 import tempy from 'tempy';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const _describe = process.env.TRAVIS ? describe : xdescribe;
 const pkg = JSON.parse(fs.readFileSync(`${process.cwd()}/package.json`).toString());
 const [bin] = Object.keys(pkg.bin);
