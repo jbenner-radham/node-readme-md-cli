@@ -3,6 +3,7 @@
 badges:
   style: flat-square
   render:
+    - github-actions
     - license
     - node.js
     - npm

@@ -55,7 +55,7 @@ The following section markup will be output:
 Install
 -------
 ```sh
-$ npm install package-name
+npm install package-name
 ```
 ````
 
@@ -67,7 +67,7 @@ output:
 Install
 -------
 ```sh
-$ yarn add package-name # Or alternatively: `npm install package-name`
+yarn add package-name # Or alternatively: `npm install package-name`
 ```
 ````
 
@@ -90,7 +90,7 @@ The following section markup will be output:
 Install
 -------
 ```sh
-$ npm install --global package-name
+npm install --global package-name
 ```
 ````
 
@@ -102,7 +102,7 @@ output:
 Install
 -------
 ```sh
-$ yarn global add package-name # Or alternatively: `npm install --global package-name`
+yarn global add package-name # Or alternatively: `npm install --global package-name`
 ```
 ````
 
@@ -112,7 +112,7 @@ A usage section can be drafted and stored in a
 that `$PROJECT` represents the path to a project then an absolute path
 representation would be `$PROJECT/.config/readme-md/sections/usage.md`.
 
-The contents of this Markdown document will be trimed and posted directly below
+The contents of this Markdown document will be trimmed and posted directly below
 a "Usage" header following the "Install" section.
 
 ### Testing Section
@@ -136,7 +136,7 @@ The following section markup will be output:
 Testing
 -------
 ```sh
-$ npm test
+npm test
 ```
 ````
 
@@ -262,6 +262,48 @@ set to an empty array like so:
 ```yml
 badges:
   render: []
+```
+
+#### GitHub Actions Badge
+
+If you choose to render a [GitHub Actions](https://github.com/features/actions)
+badge it will try to obtain the required information automatically. So when
+specifying the following:
+
+```yml
+badges:
+  render:
+    - github-actions
+```
+
+The app will attempt to query your default Git branch and it will look in the
+`$PROJECT/.github/workflows` directory for any files in the form of
+`*.{yaml,yml}`. If only one workflow file is found it will select that as the
+workflow to generate a badge for.
+
+However, if you have multiple workflows you will need to specify which one to
+create a badge. So if we wanted to generate a badge for our
+`$PROJECT/.github/workflows/workflow.yaml` workflow we'd do like so:
+
+```yml
+badges:
+  render:
+    - github-actions
+  config:
+    github-actions:
+      workflow: workflow.yaml
+```
+
+In a similar manner if we needed to specify the workflow branch as "develop"
+for example you would do it like this:
+
+```yml
+badges:
+  render:
+    - github-actions
+  config:
+    github-actions:
+      branch: develop
 ```
 
 ### `see-also`

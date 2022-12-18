@@ -1191,10 +1191,10 @@ map-obj@^4.3.0:
   resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-4.3.0.tgz#9304f906e93faae70880da102a9f1df0ea8bb05a"
   integrity sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==
 
-md-writer@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/md-writer/-/md-writer-0.2.0.tgz#a78fc2112656b41603c863a13954febccecf4578"
-  integrity sha512-5D2kropjA4as0z9Iw9SQ9hi1qhV2beagRVTrbxK73pzmH8RJ6TYdb11aMeT0agNjNO0dpJMWXGENjK67LZ9OkQ==
+md-writer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/md-writer/-/md-writer-1.0.0.tgz#c7ff69fc50043bedce3f256edb5d6b903e6c0010"
+  integrity sha512-bmX7edaMIhabc70FogTrDEApwrDp1Rpg9WpUswJS8D5bYa1k7Xf4pWo0HDPi3BPQozuW0/caWf7EsZL/2hu6tQ==
 
 meow@^11.0.0:
   version "11.0.0"
@@ -1481,14 +1481,13 @@ read-pkg@^7.1.0:
     parse-json "^5.2.0"
     type-fest "^2.0.0"
 
-readme-md@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.8.0.tgz#cd161d5efd44ecaa10768f09038c6a972c0fc2f4"
-  integrity sha512-S/w48x/U0zNRJLPFR334uDRVapdvF8KvlvG48oSbRaH76H4ZkgpZJZ9YgqonkAfVVfubv8Npf4oRj6fe7SDXWg==
+readme-md@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.11.0.tgz#fa33dcbe9fbbad2d401da3b42cfefb7f08b2a14a"
+  integrity sha512-v7FvWiV8Gd2TI5TMvluT2E7yHoqAvQqOME/JWeBeJg7SF0Zu/v6QGL3Gqfvyibvky5YOHlkHldOhc5CKVMlEfA==
   dependencies:
     lodash.escape "^4.0.1"
-    lodash.get "^4.4.2"
-    md-writer "^0.2.0"
+    md-writer "^1.0.0"
 
 redent@^4.0.0:
   version "4.0.0"
