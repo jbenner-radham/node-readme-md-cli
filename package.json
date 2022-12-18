@@ -43,7 +43,7 @@
     "chalk": "^2.4.2",
     "execa": "^6.1.0",
     "is-file-in-cwd": "^0.1.0",
-    "js-yaml": "^3.12.2",
+    "js-yaml": "^4.1.0",
     "lodash.get": "^4.4.2",
     "lodash.result": "^4.5.2",
     "log-symbols": "^3.0.0",
