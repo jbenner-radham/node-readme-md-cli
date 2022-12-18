@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Passing no license or an empty license will now output "_To be documented._" in the body of the License section.
 - Project config now supports and prioritizes `.config/readme-md/config.yaml` files. The search order goes like so: `config.yaml` then `config.yml`.
 - The filepath logic for has been changed to better accommodate Windows environments.
+- The alt tags for badge images are now in title case where appropriate.
 
 ### Removed
 - Removed support for Travis-CI badges.
