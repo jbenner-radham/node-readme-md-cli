@@ -29,7 +29,8 @@ const cli = meow(`
     flags: {
         help: { alias: 'h' },
         version: { alias: 'v' }
-    }
+    },
+    importMeta: import.meta
 });
 
 if (cli.input.includes('init')) {
