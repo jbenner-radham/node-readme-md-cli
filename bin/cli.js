@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import app from '../lib/index.js';
-import { bold } from 'chalk';
+import chalk from 'chalk';
 import directoryExists from '../lib/directory-exists.js';
 import fs from 'node:fs';
 import loadConfig from '../lib/load-config.js';
@@ -10,6 +10,7 @@ import logSymbols from 'log-symbols';
 import makeDir from 'make-dir';
 import meow from 'meow';
 
+const { bold } = chalk;
 const cwd = process.cwd();
 const configDirectory = `${cwd}/.config/readme-md`;
 const bin = 'readme-md';
