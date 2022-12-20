@@ -2,16 +2,16 @@ import { sync as commandExistsSync } from 'command-exists';
 import path from 'node:path';
 import { execaCommand, execaCommandSync } from 'execa';
 import { fileURLToPath } from 'node:url';
-import fs from 'node:fs';
 import tempy from 'tempy';
+import parseJsonFile from '../../lib/parse-json-file.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const _describe = process.env.CI === 'true' ? describe : xdescribe;
-const pkg = JSON.parse(fs.readFileSync(`${process.cwd()}/package.json`).toString());
+const maybeDescribe = process.env.CI === 'true' ? describe : xdescribe;
+const pkg = parseJsonFile(process.cwd(), 'package.json');
 const [bin] = Object.keys(pkg.bin);
 const version = pkg.version;
 
-_describe('readme-md-cli', function () {
+maybeDescribe('readme-md-cli', function () {
     beforeAll(function () {
         process.chdir(__dirname);
         execaCommandSync('yarn link', { shell: true });

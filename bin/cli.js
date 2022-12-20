@@ -9,6 +9,7 @@ import loadConfigTemplate from '../lib/load-config-template.js';
 import logSymbols from 'log-symbols';
 import makeDir from 'make-dir';
 import meow from 'meow';
+import parseJsonFile from '../lib/parse-json-file.js';
 import path from 'node:path';
 
 const { bold } = chalk;
@@ -60,7 +61,7 @@ const config = loadConfig();
 let pkg = {};
 
 try {
-    pkg = JSON.parse(fs.readFileSync(path.join(cwd, 'package.json')).toString());
+    pkg = parseJsonFile(cwd, 'package.json');
 } catch (_) {
     const messages = [
         `No '${bold('package.json')}' file found.`,
