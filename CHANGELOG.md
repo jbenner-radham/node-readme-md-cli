@@ -5,8 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-[Unreleased]
-------------
+[0.13.0] - 2022-12-19
+---------------------
 ### Added
 - The GitHub Actions badge option has been added to the `readme-md init` config.
 
@@ -29,8 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - The minimum required [Node.js](https://nodejs.org/) version is now v8.
 
 ### Fixed
-- Addressed an issue which in some cases caused the "binary" to be reported as `cli.js` instead of `readme-md` in
-  `stderr` and `stdout` dialogs.
+- Addressed an issue which in some cases caused the "binary" to be reported as `cli.js` instead of `readme-md` in `stderr` and `stdout` dialogs.
 - Fixed the `readme-md init` command breaking when loading its config template.
 
 [0.11.0] - 2018-05-19
@@ -127,7 +126,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.13.0...HEAD
+[0.13.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.11.0...v0.12.0
 [0.11.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.9.0...v0.10.0
