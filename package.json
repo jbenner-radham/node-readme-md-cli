@@ -33,6 +33,14 @@
     "doc": "doc",
     "example": "example"
   },
+  "files": [
+    ".config/readme-md",
+    "bin",
+    "doc",
+    "example",
+    "lib",
+    "template"
+  ],
   "scripts": {
     "lint": "eslint . --ext .js --ignore-path .gitignore",
     "prepare": "husky install",
