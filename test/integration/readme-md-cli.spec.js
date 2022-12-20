@@ -2,7 +2,7 @@ import { sync as commandExistsSync } from 'command-exists';
 import path from 'node:path';
 import { execaCommand, execaCommandSync } from 'execa';
 import { fileURLToPath } from 'node:url';
-import tempy from 'tempy';
+import { temporaryDirectory } from 'tempy';
 import parseJsonFile from '../../lib/parse-json-file.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -66,7 +66,7 @@ maybeDescribe('readme-md-cli', function () {
     });
 
     it('should exit with error code `1` if called in a directory without a `package.json` file', function (done) {
-        const cwd = tempy.directory();
+        const cwd = temporaryDirectory();
 
         execaCommand(bin, { cwd }).then(() => done.fail())
             .catch(error => (error.exitCode === 1) ? done() : done.fail(error));

@@ -1,11 +1,11 @@
 import loadConfigTemplate from '../../lib/load-config-template.js';
-import tempy from 'tempy';
+import { temporaryDirectory } from 'tempy';
 
 const { any } = jasmine;
 
 describe('loadConfigTemplate', function () {
     beforeEach(function () {
-        process.chdir(tempy.directory());
+        process.chdir(temporaryDirectory());
     });
 
     it('is a function', function () {
