@@ -73,7 +73,6 @@ try {
     process.exit(1);
 }
 
-const parameters = Object.assign({}, { pkg }, { config });
-const readme = app(parameters);
+const readme = app({ pkg, ...config });
 
 console.log(readme);

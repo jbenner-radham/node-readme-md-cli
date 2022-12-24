@@ -1069,11 +1069,6 @@ lodash.merge@^4.6.2:
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
-lodash.result@^4.5.2:
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/lodash.result/-/lodash.result-4.5.2.tgz#cb45b27fb914eaa8d8ee6f0ce7b2870b87cb70aa"
-  integrity sha512-dlgJvozORK2oE4jXzTGIsJz9Vk6huNAINxYYvWc/R44x3/ah/F7OkNwr9c0wO2poh2cbdjS0jF3j8VgyCEOVfw==
-
 log-symbols@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/log-symbols/-/log-symbols-5.1.0.tgz#a20e3b9a5f53fac6aeb8e2bb22c07cf2c8f16d93"
@@ -1404,13 +1399,14 @@ read-pkg@^7.1.0:
     parse-json "^5.2.0"
     type-fest "^2.0.0"
 
-readme-md@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.11.0.tgz#fa33dcbe9fbbad2d401da3b42cfefb7f08b2a14a"
-  integrity sha512-v7FvWiV8Gd2TI5TMvluT2E7yHoqAvQqOME/JWeBeJg7SF0Zu/v6QGL3Gqfvyibvky5YOHlkHldOhc5CKVMlEfA==
+readme-md@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.13.0.tgz#d7acf54fb8bb02cd218308e37b4affa531af3321"
+  integrity sha512-f7tr6sNSRg043ByZsoo4NF5magHYhgGo+fGKstWkAtSfHqjgf0ukNXi32klwhv3ZmoZsKKeiB8z3p8ynTVJn0A==
   dependencies:
     lodash.escape "^4.0.1"
     md-writer "^1.0.0"
+    type-fest "^3.4.0"
 
 redent@^4.0.0:
   version "4.0.0"
@@ -1723,7 +1719,7 @@ type-fest@^2.0.0, type-fest@^2.12.2, type-fest@^2.13.0, type-fest@^2.5.0:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.19.0.tgz#88068015bb33036a598b952e55e9311a60fd3a9b"
   integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
 
-type-fest@^3.1.0:
+type-fest@^3.1.0, type-fest@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-3.4.0.tgz#64a35b7748ab4a96b3e0c324475ea66643c5f9df"
   integrity sha512-PEPg6RHlB9cFwoTMNENNrQFL0cXX04voWr2UPwQBJ3pVs7Mt8Y1oLWdUeMdGEwZE8HFFlujq8gS9enmyiQ8pLg==

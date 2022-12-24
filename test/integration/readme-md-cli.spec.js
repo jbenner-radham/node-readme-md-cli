@@ -7,18 +7,19 @@ import parseJsonFile from '../../lib/parse-json-file.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const maybeDescribe = process.env.CI === 'true' ? describe : xdescribe;
-const pkg = parseJsonFile(process.cwd(), 'package.json');
+const projectBaseDir = path.resolve(__dirname, '..', '..');
+const pkg = parseJsonFile(projectBaseDir, 'package.json');
 const [bin] = Object.keys(pkg.bin);
 const version = pkg.version;
 
 maybeDescribe('readme-md-cli', function () {
     beforeAll(function () {
-        process.chdir(__dirname);
+        process.chdir(projectBaseDir);
         execaCommandSync('yarn link', { shell: true });
     });
 
     afterAll(function () {
-        process.chdir(__dirname);
+        process.chdir(projectBaseDir);
         execaCommandSync(`yarn unlink ${pkg.name}`, { shell: true });
     });
 

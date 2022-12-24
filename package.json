@@ -48,15 +48,15 @@
     "test": "c8 jasmine --config=test/support/jasmine.json"
   },
   "dependencies": {
+    "camelcase-keys": "^8.0.2",
     "chalk": "^5.2.0",
     "execa": "^6.1.0",
     "is-file-in-cwd": "^0.1.0",
     "js-yaml": "^4.1.0",
-    "lodash.result": "^4.5.2",
     "log-symbols": "^5.1.0",
     "make-dir": "^3.1.0",
     "meow": "^11.0.0",
-    "readme-md": "^0.11.0",
+    "readme-md": "^0.13.0",
     "yarn-lockfile-exists": "^0.2.0"
   },
   "devDependencies": {
