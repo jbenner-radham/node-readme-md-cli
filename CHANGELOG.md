@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+[Unreleased]
+------------
+### Fixed
+- Fix typo in [0.13.0] section of changelog.
+
 [0.13.0] - 2022-12-19
 ---------------------
 ### Added
@@ -17,7 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - For packages which are MIT licensed the value "(Expat)" is no longer suffixed in the generated License section.
 - Passing no license or an empty license will now output "_To be documented._" in the body of the License section.
 - Project config now supports and prioritizes `.config/readme-md/config.yaml` files. The search order goes like so: `config.yaml` then `config.yml`.
-- The filepath logic for has been changed to better accommodate Windows environments.
+- The filepath logic has been changed to better accommodate Windows environments.
 - The alt tags for badge images are now in title case where appropriate.
 
 ### Removed
