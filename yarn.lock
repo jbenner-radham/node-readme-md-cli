@@ -1828,10 +1828,10 @@ yargs@^16.2.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-yarn-lockfile-exists@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/yarn-lockfile-exists/-/yarn-lockfile-exists-0.2.0.tgz#217c9e08099dce6ac05e0f4b7e75faccad6f2282"
-  integrity sha512-IGgLCuKhrL+UyKAB3LXBHXZyeRIL2BJbgRDFDbB6u/Mxcv593wIct+jO47IORkFzZXQUD7u1U1K3nynbU7J8Aw==
+yarn-lockfile-exists@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/yarn-lockfile-exists/-/yarn-lockfile-exists-1.0.0.tgz#30547b14731051d51df0e5712c52811b86206416"
+  integrity sha512-5GOiZ6T7zBWwmwfUL3otguOPhIhb6VrL4sA9rB56ha+RhLIi2RozC6fjz7mWqhuXAcAcJrVLpAQ+aOLJK7JMmg==
 
 yocto-queue@^0.1.0:
   version "0.1.0"
