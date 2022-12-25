@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [Unreleased]
 ------------
 ### Fixed
-- Fix typo in [0.13.0] section of changelog.
+- Fix typo in [0.13.0](#0130---2022-12-19) section of changelog.
 
 [0.13.0] - 2022-12-19
 ---------------------
