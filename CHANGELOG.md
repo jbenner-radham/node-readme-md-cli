@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]
 ------------
+### Changed
+- Updated "Usage" section of `README.md`.
+- Configuration (_e.g._, `.config/readme-md/config.yaml`) variables are now normalized as [camelCase](https://en.wikipedia.org/wiki/Camel_case) internally which means config variables can be in the form of camelCase, kebab-case, snake_case, etc.
+- Upgraded `yarn-lockfile-exists` dependency which improves filepath logic for Windows environments.
+
 ### Fixed
 - Fix typo in [0.13.0](#0130---2022-12-19) section of changelog.
 
