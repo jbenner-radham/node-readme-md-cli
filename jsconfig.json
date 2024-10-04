@@ -1,9 +1,11 @@
 {
     "compilerOptions": {
-        "module": "Node16",
-        "moduleResolution": "Node16",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "target": "ESNext",
-        "checkJs": true
+        "checkJs": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./"
     },
-    "include": ["lib/**/*"]
+    "include": ["bin/**/*", "lib/**/*", "test/**/*"]
 }
