@@ -67,7 +67,7 @@
     "eslint": "^8.30.0",
     "husky": "^8.0.2",
     "jasmine": "^4.5.0",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^15.2.10",
     "sort-package-json": "^2.10.1",
     "tempy": "^3.1.0"
   },
