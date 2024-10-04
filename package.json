@@ -56,7 +56,7 @@
     "log-symbols": "^7.0.0",
     "make-dir": "^4.0.0",
     "meow": "^11.0.0",
-    "readme-md": "^0.13.0",
+    "readme-md": "^0.13.1",
     "yarn-lockfile-exists": "^1.0.0"
   },
   "devDependencies": {

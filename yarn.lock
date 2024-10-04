@@ -1443,10 +1443,10 @@ read-pkg@^7.1.0:
     parse-json "^5.2.0"
     type-fest "^2.0.0"
 
-readme-md@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.13.0.tgz#d7acf54fb8bb02cd218308e37b4affa531af3321"
-  integrity sha512-f7tr6sNSRg043ByZsoo4NF5magHYhgGo+fGKstWkAtSfHqjgf0ukNXi32klwhv3ZmoZsKKeiB8z3p8ynTVJn0A==
+readme-md@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-0.13.1.tgz#5dca50c26a82ba99305263b71d24c973985d15dd"
+  integrity sha512-bbE1i6K2soAWshCHbUeRhWL+7wScqq6IJAP2NXXF2Xy0rjkKBAb432DNekMuv4FC7zdPXJsCfIS/eFynliAvfg==
   dependencies:
     lodash.escape "^4.0.1"
     md-writer "^1.0.0"
