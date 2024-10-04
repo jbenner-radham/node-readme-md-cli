@@ -29,8 +29,8 @@ const cli = meow(`
     configuration is initialized.
 `, {
     flags: {
-        help: { alias: 'h' },
-        version: { alias: 'v' }
+        help: { shortFlag: 'h' },
+        version: { shortFlag: 'v' }
     },
     importMeta: import.meta
 });
