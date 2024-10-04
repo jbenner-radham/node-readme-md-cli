@@ -7,8 +7,8 @@ import fs from 'node:fs';
 import loadConfig from '../lib/load-config.js';
 import loadConfigTemplate from '../lib/load-config-template.js';
 import logSymbols from 'log-symbols';
-import makeDir from 'make-dir';
 import meow from 'meow';
+import { mkdirSync } from 'node:fs';
 import parseJsonFile from '../lib/parse-json-file.js';
 import path from 'node:path';
 
@@ -51,7 +51,7 @@ if (cli.input.includes('init')) {
     const configPath = path.join('.config', 'readme-md', 'config.yaml');
     const message = `Successfully initialized a project config to ${bold(configPath)}.`;
 
-    makeDir.sync(configDirectory);
+    mkdirSync(configDirectory, { recursive: true });
     fs.writeFileSync(path.join(configDirectory, 'config.yaml'), config);
     console.log(logSymbols.success, message);
     process.exit(0);
