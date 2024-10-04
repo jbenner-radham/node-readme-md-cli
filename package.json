@@ -48,7 +48,7 @@
     "test": "c8 jasmine --config=test/support/jasmine.json"
   },
   "dependencies": {
-    "camelcase-keys": "^8.0.2",
+    "camelcase-keys": "^9.1.3",
     "chalk": "^5.2.0",
     "execa": "^6.1.0",
     "is-file-in-cwd": "^0.1.0",
