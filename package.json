@@ -42,7 +42,8 @@
     "template"
   ],
   "scripts": {
-    "lint": "eslint . --ext .js --ignore-path .gitignore",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix",
     "prepare": "husky",
     "readme": "./bin/cli.js > README.md",
     "test": "c8 jasmine --config=test/support/jasmine.json"
@@ -59,11 +60,14 @@
     "yarn-lockfile-exists": "^1.0.0"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.0",
+    "@eslint/js": "^9.12.0",
     "@types/jasmine": "^5.1.4",
     "@types/node": "^22.7.4",
     "c8": "^10.1.2",
     "command-exists": "^1.2.9",
-    "eslint": "^8.57.1",
+    "eslint": "^9.12.0",
+    "globals": "^15.10.0",
     "husky": "^9.1.6",
     "jasmine": "^5.3.1",
     "lint-staged": "^15.2.10",

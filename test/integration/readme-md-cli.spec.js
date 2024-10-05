@@ -23,19 +23,16 @@ maybeDescribe('readme-md-cli', function () {
         execaCommandSync(`yarn unlink ${pkg.name}`, { shell: true });
     });
 
-    /* eslint-disable max-len */
     beforeEach(function () {
         /**
-         * We had to do this on Travis-CI so I'm keeping it like this just in
-         * case. I might revisit this choice later.
+         * We had to do this on Travis-CI, so I'm keeping it like this just in case. I might revisit this choice later.
          *
-         * @see https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
+         * @see {@link https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables}
          */
         if (process.env.CI === 'true') {
             jasmine.DEFAULT_TIMEOUT_INTERVAL = 25000;
         }
     });
-    /* eslint-enable max-len */
 
     it('is an available system command', function () {
         expect(commandExistsSync(bin)).toBe(true);
