@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [Unreleased]
 ------------
 ### Changed
-- Upgraded `meow` dependency.
+- Upgraded `meow` and `readme-md` dependencies.
+- Updated the generated alt text for badge images to be more descriptive.
 
 [0.14.0] - 2024-10-04
 ---------------------

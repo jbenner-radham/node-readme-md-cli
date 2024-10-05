@@ -56,7 +56,7 @@
     "js-yaml": "^4.1.0",
     "log-symbols": "^7.0.0",
     "meow": "^13.2.0",
-    "readme-md": "^0.13.1",
+    "readme-md": "^1.0.0",
     "yarn-lockfile-exists": "^1.0.0"
   },
   "devDependencies": {
