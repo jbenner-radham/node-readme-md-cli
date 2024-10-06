@@ -2,14 +2,20 @@ Changelog
 =========
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 [Unreleased]
 ------------
+### Added
+- Documented the `description` config option in `doc/README.md`.
+
 ### Changed
 - Upgraded `meow` and `readme-md` dependencies.
 - Updated the generated alt text for badge images to be more descriptive.
+
+### Security
+- Addressed three vulnerabilities in dependencies of dependencies by rebuilding the lockfile.
 
 [0.14.0] - 2024-10-04
 ---------------------

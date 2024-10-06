@@ -305,16 +305,23 @@ badges:
       branch: develop
 ```
 
+### `description`
+Setting this allows you to override the `description` in your project's `package.json` file.
+
+```yml
+description: My example description.
+```
+
 ### `see-also`
 Enables and defines the contents of a "See Also" section positioned at the `-1`
 section index. An object consisting of `<link text>: <target uri>` key/value
-pairs _e.g. (`Example: http://www.example.org/`)_.
+pairs _e.g._, `Example: http://www.example.org/`.
 
 Given the following config:
 
 ```yml
 see-also:
-  Example: http://www.example.org/
+  Example: https://www.example.org/
   IETF: https://www.ietf.org/
 ```
 
@@ -323,7 +330,7 @@ The following section markup will be output:
 ```md
 See Also
 --------
-- [Example](http://www.example.org/)
+- [Example](https://www.example.org/)
 - [IETF](https://www.ietf.org/)
 ```
 
