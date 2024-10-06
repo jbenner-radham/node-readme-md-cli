@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ------------
 ### Added
 - Documented the `description` config option in `doc/README.md`.
+- Detection of [pnpm](https://pnpm.io/).
 
 ### Changed
 - Upgraded `meow` and `readme-md` dependencies.
