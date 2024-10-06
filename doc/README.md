@@ -235,7 +235,7 @@ must be defined in your `package.json` using the following declaration style:
 }
 ```
 
-Currently the following "shortcut syntax" is _**not**_ supported:
+Also, the following "shortcut syntax" is supported:
 
 ```json
 {
@@ -243,8 +243,7 @@ Currently the following "shortcut syntax" is _**not**_ supported:
 }
 ```
 
-In addition the prefixed "shortcut syntax" is currently _**not**_ supported as
-well:
+In addition, the prefixed "shortcut syntax" is supported as well:
 
 ```json
 {
@@ -253,8 +252,7 @@ well:
 ```
 
 _**Note:** If you do not have a
-[repository](https://docs.npmjs.com/files/package.json#repository) defined or
-if it is defined in a currently unsupported syntax no badges will render. The
+[repository](https://docs.npmjs.com/files/package.json#repository) defined no badges will render. The
 badge rendering process will silently fail but will not interrupt the rendering
 of the project readme otherwise._
 
