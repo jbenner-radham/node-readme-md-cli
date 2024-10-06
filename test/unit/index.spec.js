@@ -1,8 +1,19 @@
 import app from '../../lib/index.js';
+import process from 'node:process';
+import { temporaryDirectory } from 'tempy';
 
 const { any } = jasmine;
+const cwd = process.cwd();
 
 describe('app', function () {
+    beforeAll(function () {
+       process.chdir(temporaryDirectory());
+    });
+
+    afterAll(function () {
+        process.chdir(cwd);
+    });
+
     it('is a function', function () {
         expect(app).toEqual(any(Function));
     });
@@ -70,8 +81,7 @@ describe('app', function () {
                         scripts: {
                             test: 'jest'
                         }
-                    },
-                    preferYarn: true
+                    }
                 };
 
                 expect(app(config)).toContain('npm test');
@@ -79,13 +89,13 @@ describe('app', function () {
         });
     });
 
-    describe('when passed `pkg.name` and `preferYarn: true` properties', function () {
+    describe('when passed `pkg.name` and `pkg.engines.yarn` properties', function () {
         it('describes a yarn install method', function () {
             const config = {
                 pkg: {
+                    engines: { yarn: '*' },
                     name: '@example/package'
-                },
-                preferYarn: true
+                }
             };
 
             expect(app(config)).toContain(`yarn add ${config.pkg.name}`);
@@ -95,10 +105,10 @@ describe('app', function () {
             it('describes an yarn install dev method', function () {
                 const config = {
                     pkg: {
+                        engines: { yarn: '*' },
                         name: '@example/package'
                     },
-                    preferDev: true,
-                    preferYarn: true
+                    preferDev: true
                 };
 
                 expect(app(config)).toContain(`yarn add --dev ${config.pkg.name}`);
@@ -109,12 +119,12 @@ describe('app', function () {
             it('describes a yarn test method', function () {
                 const config = {
                     pkg: {
+                        engines: { yarn: '*' },
                         name: '@example/package',
                         scripts: {
                             test: 'jest'
                         }
-                    },
-                    preferYarn: true
+                    }
                 };
 
                 expect(app(config)).toContain('yarn test');

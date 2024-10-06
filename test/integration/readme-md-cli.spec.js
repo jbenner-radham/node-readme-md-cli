@@ -1,16 +1,17 @@
 import { sync as commandExistsSync } from 'command-exists';
-import path from 'node:path';
 import { execaCommand, execaCommandSync } from 'execa';
 import { fileURLToPath } from 'node:url';
-import { temporaryDirectory } from 'tempy';
 import parseJsonFile from '../../lib/parse-json-file.js';
+import path from 'node:path';
+import process from 'node:process';
+import { temporaryDirectory } from 'tempy';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const maybeDescribe = process.env.CI === 'true' ? describe : xdescribe;
 const projectBaseDir = path.resolve(__dirname, '..', '..');
 const pkg = parseJsonFile(projectBaseDir, 'package.json');
 const [bin] = Object.keys(pkg.bin);
-const version = pkg.version;
+const { version } = pkg;
 
 maybeDescribe('readme-md-cli', function () {
     beforeAll(function () {
