@@ -1,9 +1,9 @@
 readme-md-cli
 =============
-[![CI Status](https://img.shields.io/github/actions/workflow/status/jbenner-radham/node-readme-md-cli/ci.yaml?branch=main&style=flat-square)](https://github.com/jbenner-radham/node-readme-md-cli/actions/workflows/ci.yaml)
-[![npm](https://img.shields.io/npm/v/readme-md-cli.svg?style=flat-square)](https://www.npmjs.com/package/readme-md-cli)
-[![Node.js](https://img.shields.io/node/v/readme-md-cli.svg?style=flat-square)](https://nodejs.org/)
-[![License](https://img.shields.io/github/license/jbenner-radham/node-readme-md-cli.svg?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/jbenner-radham/node-readme-md-cli/ci.yaml?branch=main&style=flat-square)](https://github.com/jbenner-radham/node-readme-md-cli/actions/workflows/ci.yaml)
+[![npm Version](https://img.shields.io/npm/v/readme-md-cli.svg?style=flat-square)](https://www.npmjs.com/package/readme-md-cli)
+[![Node.js Version](https://img.shields.io/node/v/readme-md-cli.svg?style=flat-square)](https://nodejs.org/)
+[![License Type](https://img.shields.io/github/license/jbenner-radham/node-readme-md-cli.svg?style=flat-square)](LICENSE)
 
 Automatically generate a readme for your project from the CLI.
 
@@ -24,8 +24,9 @@ $ readme-md --help
       $ readme-md [init]
 
   Options
-      --help, -h       Display this message.
-      --version, -v    Display the application version.
+      --help, -h               Display this message.
+      --non-interactive, -n    Run in non-interactive mode.
+      --version, -v            Display the application version.
 
   When invoked with the "init" sub-command a project level runtime
   configuration is initialized.

@@ -7,8 +7,9 @@ $ readme-md --help
       $ readme-md [init]
 
   Options
-      --help, -h       Display this message.
-      --version, -v    Display the application version.
+      --help, -h               Display this message.
+      --non-interactive, -n    Run in non-interactive mode.
+      --version, -v            Display the application version.
 
   When invoked with the "init" sub-command a project level runtime
   configuration is initialized.
