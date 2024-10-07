@@ -194,7 +194,7 @@ License
 The EXAMPLE License. See the license file for details.
 ```
 
-In addition, if a `LICENSE`, `LICENSE.md`, or `LICENSE.txt` file is present in
+In addition, if a `LICENSE`, `LICENSE.md`, `LICENSE.rst`, or `LICENSE.txt` file is present in
 the root of the project directory the license will be hyperlinked.
 
 Given that a `LICENSE` file is present in our project root the following variant
