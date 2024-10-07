@@ -10,12 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Detection of `LICENSE.rst` license files.
 - Detection of lowercase license files (_e.g._, `license`, `license.md`, `license.rst`, `license.txt`).
+- Interactive mode. Now when `readme-md` is invoked from the command line you will be prompted with questions. This behavior is negated when running in a CI environment or if the `--non-interactive` flag is used.
 
 [0.16.0] - 2024-10-07
 ---------------------
 ### Added
 - The "shortcut syntax" for the `repository` property in `package.json` is now supported. See [here](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#repository) for reference.
-- Interactive mode. Now when `readme-md` is invoked from the command line you will be prompted with questions. This behavior is negated when running in a CI environment or if the `--non-interactive` flag is used.
 
 ### Changed
 - The license badge alt text to be more descriptive.
