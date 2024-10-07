@@ -3,7 +3,7 @@
 import app from '../lib/index.js';
 import attempt from '../lib/attempt.js';
 import chalk from 'chalk';
-import { checkbox, confirm, input, select } from '@inquirer/prompts';
+import { checkbox, confirm, input } from '@inquirer/prompts';
 import directoryExists from '../lib/directory-exists.js';
 import fs from 'node:fs';
 import getPackageManager from '../lib/get-package-manager.js';
@@ -17,6 +17,7 @@ import { mkdirSync } from 'node:fs';
 import parseJsonFile from '../lib/parse-json-file.js';
 import path from 'node:path';
 import process from 'node:process';
+import Radio from 'prompt-radio';
 import readFile from '../lib/read-file.js';
 
 const { bold } = chalk;
@@ -105,7 +106,8 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
                 checked: true,
                 disabled: isGithubRepository(pkg.repository) && pkg.license && License.getLinkTarget()
                     ? false
-                    : '(repository must be set to a GitHub repo and license must be set in your package.json and you must have a LICENSE file)',
+                    : '(repository must be set to a GitHub repo and license must be set in your package.json and you '
+                        + 'must have a LICENSE file)',
                 name: 'License Type',
                 value: 'license'
             },
@@ -141,13 +143,11 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
 
     if (!usage) {
         config.preferSemicolons = await confirm({ default: true, message: 'Prefer semicolons in examples?' });
-        config.quoteType = await select({
-            choices: [
-                { value: 'single' },
-                { value: 'double' }
-            ],
-            message: 'Which type of quotes to use in example code'
-        });
+        config.quoteType = await new Radio({
+            choices: ['single', 'double'],
+            default: config.quoteType || 'single',
+            message: 'Which type of quotes to use in example code?'
+        }).run();
     }
 }
 
