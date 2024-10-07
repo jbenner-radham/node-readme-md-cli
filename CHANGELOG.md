@@ -5,8 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-[Unreleased]
-------------
+[0.16.0] - 2024-10-07
+---------------------
 ### Added
 - The "shortcut syntax" for the `repository` property in `package.json` is now supported. See [here](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#repository) for reference.
 
@@ -162,7 +162,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.15.0...HEAD
+[Unreleased]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.16.0...HEAD
+[0.16.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.15.0...v0.16.0
 [0.15.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.14.0...v0.15.0
 [0.14.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.13.0...v0.14.0
 [0.13.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.12.0...v0.13.0
