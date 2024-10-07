@@ -194,11 +194,10 @@ License
 The EXAMPLE License. See the license file for details.
 ```
 
-In addition, if a `LICENSE`, `LICENSE.md`, `LICENSE.rst`, or `LICENSE.txt` file is present in
-the root of the project directory the license will be hyperlinked.
+In addition, if a `LICENSE`, `LICENSE.md`, `LICENSE.rst`, or `LICENSE.txt` file or any lowercased variant is present in the root of
+the project directory the license will be hyperlinked.
 
-Given that a `LICENSE` file is present in our project root the following variant
-markup will be output:
+Given that a `LICENSE` file is present in our project root the following variant markup will be output:
 
 ```md
 License
@@ -296,7 +295,6 @@ badges:
 ```
 
 #### GitHub Actions Badge
-
 If you choose to render a [GitHub Actions](https://github.com/features/actions)
 badge it will try to obtain the required information automatically. So when
 specifying the following:
@@ -307,7 +305,7 @@ badges:
     - github-actions
 ```
 
-The app will attempt to query your default Git branch and it will look in the
+The app will attempt to query your default Git branch, and it will look in the
 `$PROJECT/.github/workflows` directory for any files in the form of
 `*.{yaml,yml}`. If only one workflow file is found it will select that as the
 workflow to generate a badge for.
@@ -335,6 +333,16 @@ badges:
   config:
     github-actions:
       branch: develop
+```
+
+#### License Badge
+To render a license badge `repository` must be set to a GitHub repo and `license` must be set in your `package.json` In
+addition a license file must be present in your project. See [#License Section] for a list of supported license files.
+
+```yml
+badges:
+  render:
+      - license
 ```
 
 ### `description`

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ------------
 ### Added
 - Detection of `LICENSE.rst` license files.
+- Detection of lowercase license files (_e.g._, `license`, `license.md`, `license.rst`, `license.txt`).
 
 [0.16.0] - 2024-10-07
 ---------------------
