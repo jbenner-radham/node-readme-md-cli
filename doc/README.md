@@ -337,7 +337,8 @@ badges:
 
 #### License Badge
 To render a license badge `repository` must be set to a GitHub repo and `license` must be set in your `package.json` In
-addition a license file must be present in your project. See [#License Section] for a list of supported license files.
+addition a license file must be present in your project. See [License Section](#license-section) for a list of supported
+license files.
 
 ```yml
 badges:
