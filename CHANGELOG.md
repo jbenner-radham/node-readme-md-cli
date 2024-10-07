@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - The "shortcut syntax" for the `repository` property in `package.json` is now supported. See [here](https://docs.npmjs.com/cli/v10/configuring-npm/package-json#repository) for reference.
 
+### Changed
+- The license badge alt text to be more descriptive.
+
 [0.15.0] - 2024-10-06
 ---------------------
 ### Added
