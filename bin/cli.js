@@ -17,7 +17,7 @@ import { mkdirSync } from 'node:fs';
 import parseJsonFile from '../lib/parse-json-file.js';
 import path from 'node:path';
 import process from 'node:process';
-import Radio from 'prompt-radio';
+import radio from 'inquirer-radio-prompt';
 import readFile from '../lib/read-file.js';
 
 const { bold } = chalk;
@@ -86,6 +86,8 @@ try {
 const configSectionsPath = path.join(configDirectory, 'sections');
 const usage = attempt(() => readFile(configSectionsPath, 'usage.md').trim());
 
+if (!config.badges) config.badges = {};
+
 if (!config.sectionOverrides) config.sectionOverrides = {};
 
 if (usage) config.sectionOverrides.usage = usage;
@@ -131,7 +133,7 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
         message: 'Enter your package description'
     });
     config.preferDev = await confirm({
-        default: false,
+        default: config.preferDev ?? false,
         message: 'Prefer your package to be installed as a dev dependency?'
     });
 
@@ -143,11 +145,15 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
 
     if (!usage) {
         config.preferSemicolons = await confirm({ default: true, message: 'Prefer semicolons in examples?' });
-        config.quoteType = await new Radio({
-            choices: ['single', 'double'],
+        config.quoteType = await radio({
+            choices: [
+                { name: 'Single', value: 'single' },
+                { name: 'Double', value: 'double' }
+            ],
             default: config.quoteType || 'single',
-            message: 'Which type of quotes to use in example code?'
-        }).run();
+            message: 'Which type of quotes to use in example code?',
+            required: true
+        });
     }
 }
 
