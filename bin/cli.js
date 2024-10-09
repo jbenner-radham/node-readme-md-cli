@@ -3,10 +3,11 @@
 import app from '../lib/index.js';
 import attempt from '../lib/attempt.js';
 import chalk from 'chalk';
-import { checkbox, confirm, input } from '@inquirer/prompts';
+import { checkbox, confirm, input, select } from '@inquirer/prompts';
 import directoryExists from '../lib/directory-exists.js';
 import fs from 'node:fs';
 import getPackageManager from '../lib/get-package-manager.js';
+import isFileInCwd from 'is-file-in-cwd';
 import isGithubRepository from '../lib/is-github-repository.js';
 import License from '../lib/License.js';
 import loadConfig from '../lib/load-config.js';
@@ -22,7 +23,7 @@ import readFile from '../lib/read-file.js';
 
 const { bold } = chalk;
 const cwd = process.cwd();
-const configDirectory = path.join(cwd, '.config', 'readme-md');
+const configPath = path.join(cwd, '.config', 'readme-md');
 const bin = 'readme-md';
 const helpCmd = `${bin} --help`;
 const cli = meow(`
@@ -46,7 +47,7 @@ const cli = meow(`
 });
 
 if (cli.input.includes('init')) {
-    if (directoryExists(configDirectory)) {
+    if (directoryExists(configPath)) {
         const messages = [
             `A preexisting ${bold(path.join('.config', 'readme-md'))} directory was found.`,
             `Did you mean to initialize in another directory?`,
@@ -61,8 +62,8 @@ if (cli.input.includes('init')) {
     const configPath = path.join('.config', 'readme-md', 'config.yaml');
     const message = `Successfully initialized a project config to ${bold(configPath)}.`;
 
-    mkdirSync(configDirectory, { recursive: true });
-    fs.writeFileSync(path.join(configDirectory, 'config.yaml'), config);
+    mkdirSync(configPath, { recursive: true });
+    fs.writeFileSync(path.join(configPath, 'config.yaml'), config);
     console.log(logSymbols.success, message);
     process.exit(0);
 }
@@ -83,7 +84,7 @@ try {
     process.exit(1);
 }
 
-const configSectionsPath = path.join(configDirectory, 'sections');
+const configSectionsPath = path.join(configPath, 'sections');
 const usage = attempt(() => readFile(configSectionsPath, 'usage.md').trim());
 
 if (!config.badges) config.badges = {};
@@ -154,6 +155,56 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
             message: 'Which type of quotes to use in example code?',
             required: true
         });
+    }
+
+    const writeTo = await select({
+        choices: [
+            { name: 'README.md', value: 'readme.md' },
+            { name: 'stdout', value: 'stdout' }
+        ],
+        default: 'readme.md',
+        message: 'Write to which destination?'
+    });
+
+    function writeReadmeAndExit(config, flag = 'w') {
+        const readme = app({ pkg, ...config });
+
+        try {
+            fs.writeFileSync('README.md', readme, { flag });
+            console.log(logSymbols.success, bold('README.md successfully written!'));
+
+            process.exit(0);
+        } catch (_) {
+            console.error(logSymbols.error, bold('Could not write README.md!'));
+
+            process.exit(1);
+        }
+    }
+
+    if (writeTo === 'readme.md') {
+        if (isFileInCwd('README.md')) {
+            const shouldOverwrite = await confirm({
+                default: false,
+                message: 'A README.md is already present. Overwrite it?'
+            });
+
+            if (shouldOverwrite) {
+                writeReadmeAndExit({ pkg, ...config });
+            } else {
+                const chosenAction = await select({
+                    choices: [
+                        { name: 'Write to stdout', value: 'stdout' },
+                        { name: 'Exit', value: 'exit' }
+                    ],
+                    default: 'stdout',
+                    message: 'Choose an action'
+                });
+
+                if (chosenAction === 'exit') process.exit(0);
+            }
+        } else {
+            writeReadmeAndExit({ pkg, ...config }, 'wx');
+        }
     }
 }
 
