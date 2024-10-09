@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Detection of lowercase license files (_e.g._, `license`, `license.md`, `license.rst`, `license.txt`).
 - Interactive mode. Now when `readme-md` is invoked from the command line you will be prompted with questions. This behavior is negated when running in a CI environment or if the `--non-interactive` flag is used.
 
+### Fixed
+- An issue where the default Git branch would not be detected.
+
 [0.16.0] - 2024-10-07
 ---------------------
 ### Added
