@@ -6,6 +6,8 @@ import chalk from 'chalk';
 import { checkbox, confirm, input, select } from '@inquirer/prompts';
 import directoryExists from '../lib/directory-exists.js';
 import fs from 'node:fs';
+ import getDefaultGitBranch from '../lib/get-default-git-branch.js';
+import getGithubActionsWorkflow from '../lib/get-github-actions-workflow.js';
 import getPackageManager from '../lib/get-package-manager.js';
 import isFileInCwd from 'is-file-in-cwd';
 import isGithubRepository from '../lib/is-github-repository.js';
@@ -94,14 +96,18 @@ if (!config.sectionOverrides) config.sectionOverrides = {};
 if (usage) config.sectionOverrides.usage = usage;
 
 if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
+    const isGithubActionsBadgeEligible = isGithubRepository(pkg.repository) &&
+        (config.badges?.config?.githubActions?.branch || getDefaultGitBranch()) &&
+        getGithubActionsWorkflow(config.badges?.config?.githubActions);
     pkg.name = await input({ default: pkg.name, message: 'Enter your package name' });
     config.badges.render = await checkbox({
         choices: [
             {
                 checked: true,
-                disabled: isGithubRepository(pkg.repository)
+                disabled: isGithubActionsBadgeEligible
                     ? false
-                    : '(repository must be set to a GitHub repo in your package.json)',
+                    : '(repository must be set to a GitHub repo in your package.json, default Git branch must be '
+                        + 'detectable, and you must has a workflow file)',
                 name: 'GitHub Actions Workflow Status',
                 value: 'github-actions'
             },

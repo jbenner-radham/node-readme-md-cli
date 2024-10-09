@@ -311,8 +311,9 @@ The app will attempt to query your default Git branch, and it will look in the
 workflow to generate a badge for.
 
 However, if you have multiple workflows you will need to specify which one to
-create a badge. So if we wanted to generate a badge for our
-`$PROJECT/.github/workflows/workflow.yaml` workflow we'd do like so:
+create a badge. Otherwise, the first detected workflow will be selected. So if
+we wanted to generate a badge for our `$PROJECT/.github/workflows/workflow.yaml`
+workflow we'd do like so:
 
 ```yml
 badges:
