@@ -1,5 +1,5 @@
 import { sync as commandExistsSync } from 'command-exists';
-import { execaCommand, execaCommandSync } from 'execa';
+import { execa, execaSync } from 'execa';
 import { fileURLToPath } from 'node:url';
 import parseJsonFile from '../../lib/parse-json-file.js';
 import path from 'node:path';
@@ -16,12 +16,12 @@ const { version } = pkg;
 maybeDescribe('readme-md-cli', function () {
     beforeAll(function () {
         process.chdir(projectBaseDir);
-        execaCommandSync('yarn link', { shell: true });
+        execaSync('yarn', ['link'], { shell: true });
     });
 
     afterAll(function () {
         process.chdir(projectBaseDir);
-        execaCommandSync(`yarn unlink ${pkg.name}`, { shell: true });
+        execaSync('yarn', ['unlink', pkg.name], { shell: true });
     });
 
     beforeEach(function () {
@@ -40,34 +40,40 @@ maybeDescribe('readme-md-cli', function () {
     });
 
     it('writes the version number to stdout if called with the `--version` flag', function (done) {
-        execaCommand(`${bin} --version`).then(output => (output.stdout === version) ? done() : done.fail())
+        execa(bin, ['--version'])
+            .then(result => (result.stdout === version) ? done() : done.fail())
             .catch(error => done.fail(error));
     });
 
     it('should exit with error code `0` if called with the `--help` flag', function (done) {
-        execaCommand(`${bin} --help`).then(() => done())
+        execa(bin, ['--help'])
+            .then(() => done())
             .catch(error => done.fail(error));
     });
 
     it('should exit with error code `0` if called with the `-h` flag', function (done) {
-        execaCommand(`${bin} -h`).then(() => done())
+        execa(bin, ['-h'])
+            .then(() => done())
             .catch(error => done.fail(error));
     });
 
     it('should exit with error code `0` if called with the `--version` flag', function (done) {
-        execaCommand(`${bin} --version`).then(() => done())
+        execa(bin, ['--version'])
+            .then(() => done())
             .catch(error => done.fail(error));
     });
 
     it('should exit with error code `0` if called with the `-v` flag', function (done) {
-        execaCommand(`${bin} -v`).then(() => done())
+        execa(bin, ['-v'])
+            .then(() => done())
             .catch(error => done.fail(error));
     });
 
     it('should exit with error code `1` if called in a directory without a `package.json` file', function (done) {
         const cwd = temporaryDirectory();
 
-        execaCommand(bin, { cwd }).then(() => done.fail())
+        execa(bin, [], { cwd })
+            .then(() => done.fail())
             .catch(error => (error.exitCode === 1) ? done() : done.fail(error));
     });
 });
