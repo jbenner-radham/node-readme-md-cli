@@ -7,6 +7,8 @@ readme-md-cli
 
 Automatically generate a readme for your project from the CLI.
 
+![readme-md Demo](images/readme-md-demo.gif)
+
 Install
 -------
 ```sh
