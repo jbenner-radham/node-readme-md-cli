@@ -20,7 +20,6 @@ import { mkdirSync } from 'node:fs';
 import parseJsonFile from '../lib/parse-json-file.js';
 import path from 'node:path';
 import process from 'node:process';
-import radio from 'inquirer-radio-prompt';
 import readFile from '../lib/read-file.js';
 
 const { bold } = chalk;
@@ -152,14 +151,13 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
 
     if (!usage) {
         config.preferSemicolons = await confirm({ default: true, message: 'Prefer semicolons in examples?' });
-        config.quoteType = await radio({
+        config.quoteType = await select({
             choices: [
                 { name: 'Single', value: 'single' },
                 { name: 'Double', value: 'double' }
             ],
             default: config.quoteType || 'single',
-            message: 'Which type of quotes to use in example code?',
-            required: true
+            message: 'Which type of quotes to use in example code?'
         });
     }
 

@@ -970,17 +970,6 @@ imurmurhash@^0.1.4:
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha512-JmXMZ6wuvDmLiHEml9ykzqO6lwFbof0GG4IkcGaENdCRDDmMVnny7s5HsIgHCbaq0w2MyPhDqkhTUgS2LU2PHA==
 
-inquirer-radio-prompt@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/inquirer-radio-prompt/-/inquirer-radio-prompt-1.1.0.tgz#02ee28afd2c088adb15edada5fee02291b508e8d"
-  integrity sha512-GYmhXqWmLr1bDpAagcUsh5zgiCldr69PkgpdONsqFy6V9GNFE/EDGJ4QlScO2wTawf3nQn5dxE2dTs5EIASLgA==
-  dependencies:
-    "@inquirer/core" "^10.0.0"
-    "@inquirer/figures" "^1.0.7"
-    "@inquirer/type" "^3.0.0"
-    ansi-escapes "^7.0.0"
-    yoctocolors "^2.1.1"
-
 is-extglob@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/is-extglob/-/is-extglob-2.1.1.tgz#a88c02535791f02ed37c76a1b9ea9773c833f8c2"
