@@ -38,6 +38,7 @@
     "bin",
     "doc",
     "example",
+    "images",
     "lib",
     "template"
   ],
