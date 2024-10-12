@@ -6,7 +6,7 @@ import chalk from 'chalk';
 import { checkbox, confirm, input, select } from '@inquirer/prompts';
 import directoryExists from '../lib/directory-exists.js';
 import fs from 'node:fs';
- import getDefaultGitBranch from '../lib/get-default-git-branch.js';
+import getDefaultGitBranch from '../lib/get-default-git-branch.js';
 import getGithubActionsWorkflow from '../lib/get-github-actions-workflow.js';
 import getPackageManager from '../lib/get-package-manager.js';
 import isFileInCwd from 'is-file-in-cwd';
