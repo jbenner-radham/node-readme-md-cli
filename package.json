@@ -5,12 +5,17 @@
   "keywords": [
     "cli",
     "commonmark",
+    "create",
+    "creator",
     "docs",
     "documentation",
+    "generate",
     "generator",
     "markdown",
     "md",
-    "readme"
+    "readme",
+    "tty",
+    "tui"
   ],
   "homepage": "https://github.com/jbenner-radham/node-readme-md-cli#readme",
   "bugs": {
