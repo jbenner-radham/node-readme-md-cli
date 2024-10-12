@@ -5,8 +5,8 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-[Unreleased]
-------------
+[0.18.0] - 2024-10-12
+---------------------
 ### Added
 - Hero image support. Set the new `hero-image` property in the config to enable this. See the [docs](doc/README.md#hero-image) for more details.
 
@@ -180,7 +180,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial release.
 
-[Unreleased]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.17.0...HEAD
+[Unreleased]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.18.0...HEAD
+[0.18.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.17.0...v0.18.0
 [0.17.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.16.0...v0.17.0
 [0.16.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.15.0...v0.16.0
 [0.15.0]: https://github.com/jbenner-radham/node-readme-md-cli/compare/v0.14.0...v0.15.0
