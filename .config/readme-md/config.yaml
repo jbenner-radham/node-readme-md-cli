@@ -7,5 +7,8 @@ badges:
     - license
     - node.js
     - npm
+hero-image:
+  alt: readme-md Demo
+  src: images/readme-md-demo.gif
 see-also:
   readme-md @ npm: https://www.npmjs.com/package/readme-md
