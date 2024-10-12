@@ -1,9 +1,9 @@
 readme-md-cli
 =============
-[![Build Status](https://img.shields.io/github/actions/workflow/status/jbenner-radham/node-readme-md-cli/ci.yaml?branch=main&style=flat-square)](https://github.com/jbenner-radham/node-readme-md-cli/actions/workflows/ci.yaml)
-[![npm Version](https://img.shields.io/npm/v/readme-md-cli.svg?style=flat-square)](https://www.npmjs.com/package/readme-md-cli)
-[![Node.js Version](https://img.shields.io/node/v/readme-md-cli.svg?style=flat-square)](https://nodejs.org/)
-[![License Type](https://img.shields.io/github/license/jbenner-radham/node-readme-md-cli.svg?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/jbenner-radham/node-readme-md-cli/ci.yaml?branch=main&style=flat)](https://github.com/jbenner-radham/node-readme-md-cli/actions/workflows/ci.yaml)
+[![npm Version](https://img.shields.io/npm/v/readme-md-cli.svg?style=flat)](https://www.npmjs.com/package/readme-md-cli)
+[![Node.js Version](https://img.shields.io/node/v/readme-md-cli.svg?style=flat)](https://nodejs.org/)
+[![License Type](https://img.shields.io/github/license/jbenner-radham/node-readme-md-cli.svg?style=flat)](LICENSE)
 
 Automatically generate a readme for your project from the CLI.
 
