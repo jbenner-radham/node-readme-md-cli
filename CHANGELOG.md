@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]
 ------------
 ### Added
-- Hero image support. Set the new `hero-image` property in the config to enable this. See the [docs](doc/README.md) for more details.
+- Hero image support. Set the new `hero-image` property in the config to enable this. See the [docs](doc/README.md#hero-image) for more details.
 
 ### Changed
 - Upgraded `readme-md` dependency to [v1.1.0](https://github.com/jbenner-radham/node-readme-md/releases/tag/v1.1.0).
