@@ -354,6 +354,15 @@ Setting this allows you to override the `description` in your project's `package
 description: My example description.
 ```
 
+### `hero-image`
+Setting this will display a hero image in your readme immediately below the description. It accepts an object with two properties, `alt` and `src`.
+
+```yml
+hero-image:
+  alt: A hero image
+  src: path/to/image.png
+```
+
 ### `prefer-npm`
 Setting this to `true` overrides any detection of pnpm or Yarn and utilizes npm based examples for the "Install" and "Testing" sections. Defaults to `false`.
 
