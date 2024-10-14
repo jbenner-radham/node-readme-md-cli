@@ -64,7 +64,7 @@
     "lodash.isplainobject": "^4.0.6",
     "log-symbols": "^7.0.0",
     "meow": "^13.2.0",
-    "readme-md": "^1.1.0",
+    "readme-md": "^1.2.0",
     "yarn-lockfile-exists": "^1.0.0"
   },
   "devDependencies": {
