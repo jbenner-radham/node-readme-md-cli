@@ -1429,10 +1429,10 @@ quick-lru@^6.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-6.1.2.tgz#e9a90524108629be35287d0b864e7ad6ceb3659e"
   integrity sha512-AAFUA5O1d83pIHEhJwWCq/RQcRukCkn/NSm2QsTEMle5f2hP0ChI2+3Xb051PZCkLryI/Ir1MVKviT2FIloaTQ==
 
-readme-md@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-1.2.0.tgz#168bdfbbb7fb094bcad974f3d313a3ee9d1098c7"
-  integrity sha512-uTXubIKGB+u5MBUtHs5JgysQF6I1r8bn8iobTzf7cbOsbDb3xmpOy6q32N24gKRal08tAMSbmgKJ5bMF8JCf+Q==
+readme-md@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-1.2.1.tgz#174d1e296b4079f76315f358a11fcbcf331d43b1"
+  integrity sha512-8xKricPRqMfAH/ga227uTkpVKyfm48i4++M9ntBhEMMQIhfKVeoimeK2Awn14wivo/fd2dp21KIZT8iWqsZDAA==
   dependencies:
     camelcase "^8.0.0"
     md-writer "^1.1.0"
