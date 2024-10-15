@@ -150,7 +150,7 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
     }
 
     if (!usage) {
-        config.preferSemicolons = await confirm({ default: true, message: 'Prefer semicolons in examples?' });
+        config.preferSemicolons = await confirm({ default: true, message: 'Prefer semicolons in example code?' });
         config.quoteType = await select({
             choices: [
                 { name: 'Single', value: 'single' },
