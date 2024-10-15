@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ------------
 ### Changed
 - Upgraded `readme-md` dependency to [v1.2.1](https://github.com/jbenner-radham/node-readme-md/releases/tag/v1.2.1).
+- Now takes `packageManager` in `package.json` into account in addition to `engines` when determining the package manager. See [here](https://nodejs.org/docs/v20.18.0/api/packages.html#packagemanager) for reference.
 
 [0.18.0] - 2024-10-12
 ---------------------

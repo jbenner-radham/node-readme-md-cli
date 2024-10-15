@@ -71,6 +71,16 @@ yarn add package-name # Or alternatively: `npm install package-name`
 ```
 ````
 
+Alternatively, if a [pnpm-lock.yaml](https://pnpm.io/git#lockfiles) file is present in the root of the project directory the following variant markup will be output:
+
+````md
+Install
+-------
+```sh
+pnpm add package-name # Or alternatively: `npm install package-name`
+```
+````
+
 Global install instructions will be output in the event of
 [preferGlobal](https://docs.npmjs.com/files/package.json#preferglobal) being
 defined as `true` in the project's `package.json`.
@@ -126,6 +136,31 @@ Given the following package:
   "engines": {
     "pnpm": "*"
   },
+  "preferGlobal": true
+}
+```
+
+The following section markup will be output:
+
+````md
+Install
+-------
+```sh
+pnpm add --global package-name # Or alternatively: `npm install --global package-name`
+```
+````
+
+Lastly, if [npm](https://docs.npmjs.com/cli/v10/commands/npm), [pnpm](https://pnpm.io/), or [Yarn](https://yarnpkg.com/) is specified in the `package.json` in the `packageManager` field this will take precedence over anything defined in `engines` or any lockfiles present.
+
+Given the following package:
+
+```json
+{
+  "name": "package-name",
+  "engines": {
+    "yarn": "*"
+  },
+  "packageManager": "pnpm@^9.12.1",
   "preferGlobal": true
 }
 ```

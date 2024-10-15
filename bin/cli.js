@@ -143,7 +143,7 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
         message: 'Prefer your package to be installed as a dev dependency?'
     });
 
-    const packageManager = getPackageManager(pkg.engines);
+    const packageManager = getPackageManager(pkg);
 
     if (packageManager !== 'npm') {
         config.preferNpm = await confirm({ default: false, message: `Prefer npm over ${packageManager} in examples?` });
