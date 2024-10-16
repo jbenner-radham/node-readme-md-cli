@@ -48,6 +48,7 @@
     "template"
   ],
   "scripts": {
+    "demo": "agg demo.cast images/demo.gif",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "prepare": "husky",
