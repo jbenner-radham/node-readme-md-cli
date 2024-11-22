@@ -1364,14 +1364,14 @@ quick-lru@^6.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-6.1.2.tgz#e9a90524108629be35287d0b864e7ad6ceb3659e"
   integrity sha512-AAFUA5O1d83pIHEhJwWCq/RQcRukCkn/NSm2QsTEMle5f2hP0ChI2+3Xb051PZCkLryI/Ir1MVKviT2FIloaTQ==
 
-readme-md@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-1.3.0.tgz#73a91828c663e4669fc662a06416cf194f9aad24"
-  integrity sha512-p0LsMFCSj3nxba3TYhCQSedT8HOPzzhm2bjqDTeoDUrCxr/LpkLJtOpnkWA8pcSPVezdaTym5GRqg0g7vcqDHw==
+readme-md@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/readme-md/-/readme-md-1.3.1.tgz#e3df3840a429ca243e299a15c7a50114fbb6f1af"
+  integrity sha512-L7+IC72HNDSj3KTRMu6Es3TjCeaVE6d1aK1a8AoZdaeD6h1xMeci8TDjMp7Ez9hY8jg5P3nHa0TpmW0E7L6/jw==
   dependencies:
     camelcase "^8.0.0"
     md-writer "^1.1.0"
-    type-fest "^4.26.1"
+    type-fest "^4.27.0"
 
 require-directory@^2.1.1:
   version "2.1.1"
@@ -1610,7 +1610,7 @@ type-fest@^2.12.2:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-2.19.0.tgz#88068015bb33036a598b952e55e9311a60fd3a9b"
   integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
 
-type-fest@^4.26.1, type-fest@^4.3.2:
+type-fest@^4.27.0, type-fest@^4.3.2:
   version "4.27.0"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-4.27.0.tgz#57329aae32e7b27b942b961e3ef861f0873c4b1b"
   integrity sha512-3IMSWgP7C5KSQqmo1wjhKrwsvXAtF33jO3QY+Uy++ia7hqvgSK6iXbbg5PbDBc1P2ZbNEDgejOrN4YooXvhwCw==
