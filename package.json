@@ -1,6 +1,6 @@
 {
   "name": "readme-md-cli",
-  "version": "0.19.0",
+  "version": "0.19.1",
   "description": "Automatically generate a readme for your project from the CLI.",
   "keywords": [
     "cli",
