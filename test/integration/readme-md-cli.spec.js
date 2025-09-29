@@ -16,12 +16,14 @@ const { version } = pkg;
 maybeDescribe('readme-md-cli', function () {
     beforeAll(function () {
         process.chdir(projectBaseDir);
-        execaSync('npm', ['link'], { shell: true });
+
+        // NOTE: pnpm link does not work on GH Actions on Windows.
+        execaSync('pnpm', ['link'], { shell: true });
     });
 
     afterAll(function () {
         process.chdir(projectBaseDir);
-        execaSync('npm', ['unlink', pkg.name], { shell: true });
+        execaSync('pnpm', ['unlink', pkg.name], { shell: true });
     });
 
     beforeEach(function () {
