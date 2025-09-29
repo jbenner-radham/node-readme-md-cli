@@ -16,12 +16,12 @@ const { version } = pkg;
 maybeDescribe('readme-md-cli', function () {
     beforeAll(function () {
         process.chdir(projectBaseDir);
-        execaSync('pnpm', ['link'], { shell: true });
+        execaSync('npm', ['link'], { shell: true });
     });
 
     afterAll(function () {
         process.chdir(projectBaseDir);
-        execaSync('pnpm', ['unlink', pkg.name], { shell: true });
+        execaSync('npm', ['unlink', pkg.name], { shell: true });
     });
 
     beforeEach(function () {
