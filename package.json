@@ -84,9 +84,10 @@
     "sort-package-json": "^2.11.0",
     "tempy": "^3.1.0"
   },
+  "packageManager": "pnpm@10.15.0",
   "engines": {
     "node": "^18.19.0 || >=20.5.0",
-    "yarn": "1.x"
+    "pnpm": ">=10.15"
   },
   "preferGlobal": true
 }

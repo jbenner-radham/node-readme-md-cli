@@ -11,20 +11,22 @@ jobs:
         node-version:
           - 18.x
           - 20.x
+          - 22.x
+          - 24.x
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Enable corepack # Required for act (https://github.com/nektos/act)
-        run: corepack enable
+      - name: Use pnpm
+        uses: pnpm/action-setup@v4.1.0
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install
       - name: Lint
-        run: yarn lint
+        run: pnpm run lint
       - name: Test
-        run: yarn test
+        run: pnpm test
   test-windows:
     runs-on: windows-latest
     strategy:
@@ -32,6 +34,8 @@ jobs:
         node-version:
           - 18.x
           - 20.x
+          - 22.x
+          - 24.x
     steps:
       - name: Set Git to use LF
         run: |
@@ -42,11 +46,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Enable corepack # Required for act (https://github.com/nektos/act)
-        run: corepack enable
+      - name: Use pnpm
+        uses: pnpm/action-setup@v4.1.0
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install
       - name: Lint
-        run: yarn lint
+        run: pnpm run lint
       - name: Test
-        run: yarn test
+        run: pnpm test
