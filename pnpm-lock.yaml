@@ -33,8 +33,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.1
       meow:
-        specifier: ^13.2.0
-        version: 13.2.0
+        specifier: ^14.0.0
+        version: 14.0.0
       readme-md:
         specifier: ^1.3.1
         version: 1.3.1
@@ -802,9 +802,9 @@ packages:
     resolution: {integrity: sha512-/FpeTaWMEJfbFu8BrYfFPPKrPGKeBTBGLxRBjiPanM/vh9aYz3Np70RpR26IM6YQJNFxpvFBchSKbjcOXBKr7w==}
     engines: {node: '>=16', yarn: 1.x}
 
-  meow@13.2.0:
-    resolution: {integrity: sha512-pxQJQzB6djGPXh08dacEloMFopsOqGVRKFPYvPOt9XDZ1HasbgDZA74CJGreSU4G3Ak7EFJGoiH2auq+yXISgA==}
-    engines: {node: '>=18'}
+  meow@14.0.0:
+    resolution: {integrity: sha512-JhC3R1f6dbspVtmF3vKjAWz1EVIvwFrGGPLSdU6rK79xBwHWTuHoLnRX/t1/zHS1Ch1Y2UtIrih7DAHuH9JFJA==}
+    engines: {node: '>=20'}
 
   micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
@@ -1799,7 +1799,7 @@ snapshots:
 
   md-writer@1.1.0: {}
 
-  meow@13.2.0: {}
+  meow@14.0.0: {}
 
   micromatch@4.0.8:
     dependencies:
