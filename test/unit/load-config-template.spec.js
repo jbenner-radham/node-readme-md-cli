@@ -1,23 +1,23 @@
+import { afterAll, beforeEach, describe, expect, it } from 'vitest';
 import loadConfigTemplate from '../../lib/load-config-template.js';
 import { temporaryDirectory } from 'tempy';
 
-const { any } = jasmine;
 const originalCwd = process.cwd();
 
-describe('loadConfigTemplate', function () {
-    beforeEach(function () {
+describe('loadConfigTemplate', () => {
+    beforeEach(() => {
         process.chdir(temporaryDirectory());
     });
 
-    afterAll(function () {
+    afterAll(() => {
         process.chdir(originalCwd);
     });
 
-    it('is a function', function () {
-        expect(loadConfigTemplate).toEqual(any(Function));
+    it('is a function', () => {
+        expect(loadConfigTemplate).toBeTypeOf('function');
     });
 
-    it('returns a string', function () {
-        expect(loadConfigTemplate()).toEqual(any(String));
+    it('returns a string', () => {
+        expect(loadConfigTemplate()).toBeTypeOf('string');
     });
 });

@@ -1,21 +1,19 @@
+import { describe, expect, it } from 'vitest';
 import getDefaultGitBranch from '../../lib/get-default-git-branch.js';
-
-const { any } = jasmine;
-const maybeDescribe = process.env.CI !== 'true' ? describe : xdescribe;
 
 /**
  * @todo Investigate why this doesn't work on GitHub Actions and fix it.
  */
-maybeDescribe('getDefaultGitBranch', function () {
-    it('is a function', function () {
-        expect(getDefaultGitBranch).toEqual(any(Function));
+describe.skipIf(process.env.CI === 'true')('getDefaultGitBranch', () => {
+    it('is a function', () => {
+        expect(getDefaultGitBranch).toBeTypeOf('function');
     });
 
-    it('returns "main" for this repo', function () {
+    it('returns "main" for this repo', () => {
         expect(getDefaultGitBranch()).toEqual('main');
     });
 
-    it('returns a string', function () {
-        expect(getDefaultGitBranch()).toEqual(any(String));
+    it('returns a string', () => {
+        expect(getDefaultGitBranch()).toBeTypeOf('string');
     });
 });

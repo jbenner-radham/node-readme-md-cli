@@ -1,21 +1,19 @@
+import { describe, expect, it } from 'vitest';
 import getGithubActionsWorkflows from '../../lib/get-github-actions-workflows.js';
-
-const { any } = jasmine;
-const maybeDescribe = process.env.CI !== 'true' ? describe : xdescribe;
 
 /**
  * @todo Investigate why this doesn't work on GitHub Actions and fix it.
  */
-maybeDescribe('getGithubActionsWorkflows', function () {
-    it('is a function', function () {
-        expect(getGithubActionsWorkflows).toEqual(any(Function));
+describe.skipIf(process.env.CI === 'true')('getGithubActionsWorkflows', () => {
+    it('is a function', () => {
+        expect(getGithubActionsWorkflows).toBeTypeOf('function');
     });
 
-    it('returns ["ci.yaml"] for this repo', function () {
+    it('returns an array', () => {
+        expect(getGithubActionsWorkflows()).toBeInstanceOf(Array);
+    });
+
+    it('returns ["ci.yaml"] for this repo', () => {
         expect(getGithubActionsWorkflows()).toEqual(['ci.yaml']);
-    });
-
-    it('returns an array', function () {
-        expect(getGithubActionsWorkflows()).toEqual(any(Array));
     });
 });

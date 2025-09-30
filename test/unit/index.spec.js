@@ -1,29 +1,29 @@
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import app from '../../lib/index.js';
 import process from 'node:process';
 import { temporaryDirectory } from 'tempy';
 
-const { any } = jasmine;
 const cwd = process.cwd();
 
-describe('app', function () {
-    beforeAll(function () {
+describe('app', () => {
+    beforeAll(() => {
        process.chdir(temporaryDirectory());
     });
 
-    afterAll(function () {
+    afterAll(() => {
         process.chdir(cwd);
     });
 
-    it('is a function', function () {
-        expect(app).toEqual(any(Function));
+    it('is a function', () => {
+        expect(app).toBeTypeOf('function');
     });
 
-    it('returns a string', function () {
-        expect(app()).toEqual(any(String));
+    it('returns a string', () => {
+        expect(app()).toBeTypeOf('string');
     });
 
-    describe('when passed a `pkg.name` property', function () {
-        it('describes an npm install method', function () {
+    describe('when passed a `pkg.name` property', () => {
+        it('describes an npm install method', () => {
             const config = {
                 pkg: {
                     name: '@example/package'
@@ -33,8 +33,8 @@ describe('app', function () {
             expect(app(config)).toContain(`npm install ${config.pkg.name}`);
         });
 
-        describe('when also passed a `preferDev: true` property', function () {
-            it('describes an npm install dev method', function () {
+        describe('when also passed a `preferDev: true` property', () => {
+            it('describes an npm install dev method', () => {
                 const config = {
                     pkg: {
                         name: '@example/package'
@@ -46,8 +46,8 @@ describe('app', function () {
             });
         });
 
-        describe('when also passed a `pkg.preferGlobal: true` property', function () {
-            it('describes an npm global install method', function () {
+        describe('when also passed a `pkg.preferGlobal: true` property', () => {
+            it('describes an npm global install method', () => {
                 const config = {
                     pkg: {
                         name: '@example/package',
@@ -59,8 +59,8 @@ describe('app', function () {
             });
         });
 
-        describe('when also passed `preferDev: true` and `pkg.preferGlobal: true` properties', function () {
-            it('describes an npm install dev method', function () {
+        describe('when also passed `preferDev: true` and `pkg.preferGlobal: true` properties', () => {
+            it('describes an npm install dev method', () => {
                 const config = {
                     pkg: {
                         name: '@example/package',
@@ -73,8 +73,8 @@ describe('app', function () {
             });
         });
 
-        describe('when also passed `pkg.scripts.test` properties', function () {
-            it('describes an npm test method', function () {
+        describe('when also passed `pkg.scripts.test` properties', () => {
+            it('describes an npm test method', () => {
                 const config = {
                     pkg: {
                         name: '@example/package',
@@ -89,8 +89,8 @@ describe('app', function () {
         });
     });
 
-    describe('when passed `pkg.name` and `pkg.engines.yarn` properties', function () {
-        it('describes a yarn install method', function () {
+    describe('when passed `pkg.name` and `pkg.engines.yarn` properties', () => {
+        it('describes a yarn install method', () => {
             const config = {
                 pkg: {
                     engines: { yarn: '*' },
@@ -101,8 +101,8 @@ describe('app', function () {
             expect(app(config)).toContain(`yarn add ${config.pkg.name}`);
         });
 
-        describe('when also passed a `preferDev: true` property', function () {
-            it('describes an yarn install dev method', function () {
+        describe('when also passed a `preferDev: true` property', () => {
+            it('describes an yarn install dev method', () => {
                 const config = {
                     pkg: {
                         engines: { yarn: '*' },
@@ -115,8 +115,8 @@ describe('app', function () {
             });
         });
 
-        describe('when also passed `pkg.scripts.test` properties', function () {
-            it('describes a yarn test method', function () {
+        describe('when also passed `pkg.scripts.test` properties', () => {
+            it('describes a yarn test method', () => {
                 const config = {
                     pkg: {
                         engines: { yarn: '*' },

@@ -53,7 +53,9 @@
     "lint:fix": "yarn lint --fix",
     "prepare": "husky",
     "readme": "./bin/cli.js --non-interactive > README.md",
-    "test": "c8 jasmine --config=test/support/jasmine.json"
+    "test": "vitest run --watch=false",
+    "test:coverage": "vitest run --coverage --watch=false",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@inquirer/prompts": "^7.1.0",
@@ -71,18 +73,16 @@
   "devDependencies": {
     "@eslint/compat": "^1.2.3",
     "@eslint/js": "^9.15.0",
-    "@types/jasmine": "^5.1.4",
     "@types/node": "^20.0.0",
-    "c8": "^10.1.2",
+    "@vitest/coverage-v8": "^3.2.4",
     "command-exists": "^1.2.9",
     "eslint": "^9.36.0",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
-    "jasmine": "^5.4.0",
-    "jasmine-spec-reporter": "^7.0.0",
     "lint-staged": "^16.2.3",
     "sort-package-json": "^3.4.0",
-    "tempy": "^3.1.0"
+    "tempy": "^3.1.0",
+    "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@10.15.0",
   "engines": {
