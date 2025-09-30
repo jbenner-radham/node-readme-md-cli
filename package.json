@@ -87,7 +87,7 @@
   "packageManager": "pnpm@10.15.0",
   "engines": {
     "node": ">=20.5.0",
-    "pnpm": ">=10.15"
+    "pnpm": ">=10.15.0"
   },
   "preferGlobal": true
 }
