@@ -8,12 +8,6 @@ export default class SeeAlsoSection implements Section {
     readonly title: string;
 
     constructor(seeAlso: Record<string, string>) {
-        // const linkNames = Object.keys(seeAlso);
-        // const links = linkNames.map(linkName => {
-        //     const linkTarget = seeAlso[linkName];
-        //
-        //     return `- [${linkName}](${linkTarget})`;
-        // });
         const links = Object.entries(seeAlso)
             .map(([text, href]) => `- [${text}](${href})`);
 
