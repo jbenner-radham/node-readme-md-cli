@@ -1,6 +1,5 @@
-import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { sync as commandExistsSync } from 'command-exists';
-import { execa, execaSync } from 'execa';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { execaSync } from 'execa';
 import { fileURLToPath } from 'node:url';
 import parseJsonFile from '../../src/parse-json-file.js';
 import path from 'node:path';
@@ -13,64 +12,53 @@ const projectBaseDir = path.resolve(__dirname, '..', '..');
 const pkg = parseJsonFile(projectBaseDir, 'package.json') as PackageJson;
 const [bin] = Object.keys(pkg.bin as Record<string, string>);
 const { version } = pkg;
+const pnpmHome = path.resolve(projectBaseDir, '.pnpm');
 
+const exec = (commands: string[], { cwd = projectBaseDir }: { cwd?: string } = {}) =>
+    execaSync(`PNPM_HOME=${pnpmHome}`, [`PATH="$PATH:${pnpmHome}"`, ...commands], { cwd, shell: true });
+
+// https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
 const IS_CI = process.env.CI === 'true';
 
 describe.runIf(IS_CI)('readme-md-cli', () => {
     beforeAll(() => {
         process.chdir(projectBaseDir);
-        execaSync('npm', ['link'], { shell: true });
-
-        // NOTE: pnpm link does not appear to work on GH Actions.
-        // execaSync('pnpm', ['link'], { shell: true });
+        exec(['pnpm', 'run', 'build']);
+        exec(['pnpm', 'link']);
     });
 
     afterAll(() => {
         process.chdir(projectBaseDir);
-        execaSync('npm', ['unlink', '-g', pkg.name!], { shell: true });
-
-        // NOTE: pnpm link does not appear to work on GH Actions.
-        // execaSync('pnpm', ['unlink', pkg.name!], { shell: true });
-    });
-
-    beforeEach(() => {
-        /**
-         * We had to do this on Travis-CI, so I'm keeping it like this just in case. I might revisit this choice later.
-         *
-         * @see {@link https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables}
-         */
-        // if (process.env.CI === 'true') {
-        //     jasmine.DEFAULT_TIMEOUT_INTERVAL = 25000;
-        // }
+        exec(['pnpm', 'unlink', pkg.name!]);
     });
 
     it('is an available system command', () => {
-        expect(commandExistsSync(bin!)).toBe(true);
+        expect(exec(['command', '-v', bin!]).stdout.endsWith(bin!)).toBe(true);
     });
 
-    it('writes the version number to stdout if called with the `--version` flag', async () => {
-        expect((await execa(bin!, ['--version'])).stdout).toEqual(version);
+    it('writes the version number to stdout if called with the `--version` flag', () => {
+        expect(exec([bin!, '--version']).stdout).toEqual(version);
     });
 
-    it('should exit with error code `0` if called with the `--help` flag', async () => {
-        await expect(execa(bin!, ['--help'])).resolves.toBeDefined();
+    it('should exit with error code `0` if called with the `--help` flag', () => {
+        expect(exec([bin!, '--help']).stdout).toBeDefined();
     });
 
-    it('should exit with error code `0` if called with the `-h` flag', async () => {
-        await expect(execa(bin!, ['--help'])).resolves.toBeDefined();
+    it('should exit with error code `0` if called with the `-h` flag', () => {
+        expect(exec([bin!, '-h']).stdout).toBeDefined();
     });
 
-    it('should exit with error code `0` if called with the `--version` flag', async () => {
-        await expect(execa(bin!, ['--version'])).resolves.toBeDefined();
+    it('should exit with error code `0` if called with the `--version` flag', () => {
+        expect(exec([bin!, '--version']).stdout).toBeDefined();
     });
 
-    it('should exit with error code `0` if called with the `-v` flag', async () => {
-        await expect(execa(bin!, ['-v'])).resolves.toBeDefined();
+    it('should exit with error code `0` if called with the `-v` flag', () => {
+        expect(exec([bin!, '-v']).stdout).toBeDefined();
     });
 
-    it('should exit with error code `1` if called in a directory without a `package.json` file', async () => {
+    it('should exit with error code `1` if called in a directory without a `package.json` file', () => {
         const cwd = temporaryDirectory();
 
-        await (expect(execa(bin!, [], { cwd }))).rejects.toThrowError();
+        expect(() => exec([bin!], { cwd })).toThrowError();
     });
 });
