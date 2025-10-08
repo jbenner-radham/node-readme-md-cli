@@ -49,7 +49,10 @@ export default class GithubUrl extends URL {
     }
 
     static isPrefixedShortcutSyntax(repository = '') {
-        return /^github:.+\/.+$/.test(repository);
+        return (
+            repository.startsWith('github:') &&
+            repository.replace(/^github:/, '').split('/').length === 2
+        );
     }
 
     static isUnprefixedShortcutSyntax(repository = '') {
