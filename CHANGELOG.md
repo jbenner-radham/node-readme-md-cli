@@ -12,6 +12,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - The required Node.js version is now `>=20.5.0`.
 
+### Fixed
+
+- A bug where various methods on the `GitHubUrl` class were returning false positives for non-GitHub URLs.
+- A bug which could cause the app to crash when creating various badges if an invalid repository URL was processed.
+
 [0.19.1] - 2024-11-22
 ---------------------
 ### Security
