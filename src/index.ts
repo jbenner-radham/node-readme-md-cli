@@ -30,7 +30,6 @@ export default function app(this: any, config: AppConfig = {}): string {
     const BoundGithubUrl = GithubUrl.bind(this, pkg.repository!); // It's okay if the repository is undefined.
     const githubUrl = attemptInstantiation(BoundGithubUrl, GithubUrlNullObject);
 
-    // if (githubUrl.is() && renderBadges.includes('github-actions')) {
     if (renderBadges.includes('github-actions') && githubUrl.isValid()) {
         const githubActionsConfig = config?.badges?.config?.githubActions;
         const branch = githubActionsConfig?.branch ?? attempt(getDefaultGitBranch) ?? '';
@@ -54,7 +53,6 @@ export default function app(this: any, config: AppConfig = {}): string {
         badges.push(new NodeJsBadge({ pkgName: pkg.name, style: badgeStyle }));
     }
 
-    // if (githubUrl.is() && renderBadges.includes('license') && licenseLink) {
     if (renderBadges.includes('license') && githubUrl.isValid() && licenseLink) {
         badges.push(
             new LicenseBadge({ githubPathname: githubUrl.pathname, link: licenseLink, style: badgeStyle })
