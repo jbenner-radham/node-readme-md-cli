@@ -53,10 +53,14 @@ export default class GithubUrl extends URL {
     }
 
     static isUnprefixedShortcutSyntax(repository = '') {
-        return (
-            /^(?!git\+|github:|https?:\/\/)(.|\^\/)+\/.+$/.test(repository) &&
-            repository.split('/').length === 2
-        );
+        const invalidPrefixes = ['git+', 'github:', 'http://', 'https://'];
+        const hasInvalidPrefix = invalidPrefixes.some(prefix => repository.startsWith(prefix));
+
+        if (hasInvalidPrefix) {
+            return false;
+        }
+
+        return repository.split('/').length === 2;
     }
 
     static unprefixShortcutSyntax(repository = '') {
