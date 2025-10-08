@@ -1,30 +1,39 @@
-import { fileURLToPath } from 'node:url';
-import globals from 'globals';
 import { includeIgnoreFile } from '@eslint/compat';
+import json from '@eslint/json';
+import markdown from '@eslint/markdown';
+import radham from '@radham/eslint-config';
+import { defineConfig } from 'eslint/config';
+import globals from 'globals';
 import path from 'node:path';
-import pluginJs from '@eslint/js';
+import { fileURLToPath } from 'node:url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, '.gitignore');
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+const gitignorePath = path.resolve(dirname, '.gitignore');
 
-export default [
-    includeIgnoreFile(gitignorePath),
-    pluginJs.configs.recommended,
-    {
-        files: ['**/*.js'],
-        languageOptions: { globals: globals.node },
-        rules: {
-            'eqeqeq': ['error', 'smart'],
-            'no-unused-vars': ['error', { argsIgnorePattern: '^_$', caughtErrorsIgnorePattern: '^_$' }],
-            'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }]
-        }
-
-    },
-    {
-        files: ['test/**/*.js'],
-        languageOptions: {
-            globals: { ...globals.node, ...globals.jasmine }
-        }
-    }
-];
+export default defineConfig([
+  includeIgnoreFile(gitignorePath),
+  {
+    files: ['**/*.{js,ts}'],
+    extends: [radham],
+    languageOptions: { globals: globals.node }
+  },
+  {
+    files: ['**/*.json'],
+    plugins: { json },
+    language: 'json/json',
+    extends: ['json/recommended']
+  },
+  {
+    files: ['tsconfig.json'],
+    plugins: { json },
+    language: 'json/json5',
+    extends: ['json/recommended']
+  },
+  {
+    files: ['**/*.md'],
+    plugins: { markdown },
+    language: 'markdown/gfm',
+    extends: ['markdown/recommended']
+  }
+]);

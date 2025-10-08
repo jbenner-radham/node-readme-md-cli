@@ -1,37 +1,37 @@
 export default class GithubUrlNullObject {
-    hash = '';
+  hash = '';
 
-    host = '';
+  host = '';
 
-    hostname = '';
+  hostname = '';
 
-    href = '';
+  href = '';
 
-    readonly origin = '';
+  readonly origin = '';
 
-    password = '';
+  password = '';
 
-    pathname = '/';
+  pathname = '/';
 
-    port = '';
+  port = '';
 
-    protocol = '';
+  protocol = '';
 
-    search = '';
+  search = '';
 
-    readonly searchParams = new URLSearchParams();
+  readonly searchParams = new URLSearchParams();
 
-    username = '';
+  username = '';
 
-    is() {
-        return false;
-    }
+  is() {
+    return false;
+  }
 
-    isValid(): boolean {
-        return false;
-    }
+  isValid(): boolean {
+    return false;
+  }
 
-    toJSON(): string {
-        return '';
-    }
+  toJSON(): string {
+    return '';
+  }
 }
