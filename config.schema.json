@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/jbenner-radham/node-readme-md-cli/refs/heads/main/config.schema.json",
     "title": "readme-md-cli Config",
-    "description": "Optional project configuration for readme-md-cli.",
+    "description": "Project configuration for readme-md-cli.",
     "type": "object",
     "properties": {
         "badges": {
