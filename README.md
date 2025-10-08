@@ -49,4 +49,4 @@ See Also
 
 License
 -------
-The MIT License. See the [license file](LICENSE) for details.
+The BSD 3-Clause License. See the [license file](LICENSE) for details.

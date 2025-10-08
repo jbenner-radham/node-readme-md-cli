@@ -25,7 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/jbenner-radham/node-readme-md-cli.git"
   },
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "author": "James Benner <james.benner@gmail.com> (https://www.jamesbenner.com/)",
   "type": "module",
   "exports": "./lib/index.js",

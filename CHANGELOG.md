@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - The required Node.js version is now `>=20.5.0`.
+- The license over to the BSD 3-Clause License.
 
 [0.19.1] - 2024-11-22
 ---------------------
