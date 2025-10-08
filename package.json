@@ -79,6 +79,7 @@
     "@eslint/compat": "^1.2.3",
     "@eslint/js": "^9.15.0",
     "@radham/plus-x": "^0.2.0",
+    "@types/command-exists": "^1.2.3",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.0.0",
     "@vitest/coverage-v8": "^3.2.4",
