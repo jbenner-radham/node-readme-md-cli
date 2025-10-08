@@ -1,0 +1,86 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/jbenner-radham/node-readme-md-cli/refs/heads/main/config.schema.json",
+    "title": "readme-md-cli Config",
+    "description": "Project configuration for readme-md-cli.",
+    "type": "object",
+    "properties": {
+        "badges": {
+            "type": "object",
+            "properties": {
+                "config": {
+                    "type": "object",
+                    "properties": {
+                        "githubActions": {
+                            "type": "object",
+                            "properties": {
+                                "branch": {
+                                    "type": "string"
+                                },
+                                "workflow": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "render": {
+                    "type": "array",
+                    "items": {
+                        "enum": ["github-actions", "license", "node.js", "npm"]
+                    }
+                },
+                "style": {
+                    "type": "array",
+                    "items": {
+                        "enum": ["flat", "flat-square", "for-the-badge", "plastic", "social"]
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "description": {
+            "type": "string"
+        },
+        "heroImage": {
+            "type": "object",
+            "properties": {
+                "alt": {
+                    "type": "string"
+                },
+                "src": {
+                    "type": "string"
+                }
+            },
+            "required": ["src"]
+        },
+        "preferDev": {
+            "type": "boolean"
+        },
+        "preferNpm": {
+            "type": "boolean"
+        },
+        "preferSemicolons": {
+            "type": "boolean"
+        },
+        "quoteType": {
+            "type": "string",
+            "enum": ["single", "double"]
+        },
+        "sectionOverrides": {
+            "type": "object",
+            "properties": {
+                "usage": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        },
+        "seeAlso": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "string"
+            }
+        }
+    }
+}
