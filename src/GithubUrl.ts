@@ -23,7 +23,6 @@ export default class GithubUrl extends URL {
 
         let url = '';
 
-        // if (isPlainObject(repository) && (repository as { url: string; }).url) {
         if (isPlainObject(repository)) {
             url = stripGitPrefixAndSuffix(repository.url);
         } else if (GithubUrl.isPrefixedShortcutSyntax(repository)) {
