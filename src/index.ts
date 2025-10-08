@@ -45,11 +45,13 @@ export default function app(this: any, config: AppConfig = {}): string {
         }
     }
 
-    if (renderBadges.includes('npm')) {
+    // TODO: Warn in the CLI if the package name is not set.
+    if (renderBadges.includes('npm') && pkg.name) {
         badges.push(new NpmBadge({ pkgName: pkg.name, style: badgeStyle }));
     }
 
-    if (renderBadges.includes('node.js') && pkg?.engines?.node) {
+    // TODO: Warn in the CLI if the package name is not set.
+    if (renderBadges.includes('node.js') && pkg.name && pkg?.engines?.node) {
         badges.push(new NodeJsBadge({ pkgName: pkg.name, style: badgeStyle }));
     }
 
