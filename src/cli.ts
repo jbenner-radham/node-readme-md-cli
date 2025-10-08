@@ -173,7 +173,6 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
     });
 
     function writeReadmeAndExit(config: AppConfig, flag = 'w') {
-        // const readme = app({ pkg, ...config });
         const readme = app(config);
 
         try {
