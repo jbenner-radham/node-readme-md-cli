@@ -11,6 +11,7 @@ import License from './License.js';
 import loadConfig from './load-config.js';
 import loadConfigTemplate from './load-config-template.js';
 import parseJsonFile from './parse-json-file.js';
+import detectQuoteType from './quotes/detect-quote-type.js';
 import readFile from './read-file.js';
 import type { AppConfig } from './types.js';
 import { checkbox, confirm, input, select } from '@inquirer/prompts';
@@ -159,6 +160,8 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
   }
 
   if (!usage) {
+    const defaultQuoteType = 'single';
+    const quoteType = await detectQuoteType();
     config.preferSemicolons = await confirm({
       default: true,
       message: 'Prefer semicolons in example code?'
@@ -168,7 +171,7 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
         { name: 'Single', value: 'single' },
         { name: 'Double', value: 'double' }
       ],
-      default: config.quoteType || 'single',
+      default: config.quoteType || quoteType || defaultQuoteType,
       message: 'Which type of quotes to use in example code?'
     });
   }

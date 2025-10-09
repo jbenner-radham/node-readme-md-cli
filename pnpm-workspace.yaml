@@ -1,5 +1,6 @@
 minimumReleaseAge: 1440
 minimumReleaseAgeExcludes:
   - '@radham/plus-x'
+  - readme-md
 onlyBuiltDependencies:
   - esbuild

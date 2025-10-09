@@ -1,6 +1,8 @@
 import type { HeroImage } from 'readme-md';
 import type { PackageJson } from 'type-fest';
 
+export type QuoteType = 'backtick' | 'double' | 'single';
+
 export type ReadmeMdCliConfig = {
   badges?: {
     config?: {
