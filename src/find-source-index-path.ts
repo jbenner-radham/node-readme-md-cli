@@ -1,5 +1,5 @@
-import directoryExists from '../directory-exists.js';
-import fileExists from '../file-exists.js';
+import directoryExists from './directory-exists.js';
+import fileExists from './file-exists.js';
 import path from 'node:path';
 
 export default function findSourceIndexPath(): string {
