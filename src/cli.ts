@@ -91,13 +91,11 @@ try {
 const configSectionsPath = path.join(configDirectoryPath, 'sections');
 const usage = attempt(() => readFile(configSectionsPath, 'usage.md').trim());
 const defaultQuoteType = 'single';
-const quoteType = await detectQuoteType();
+const quoteType = await detectQuoteType() || defaultQuoteType;
 
-if (!config.badges) config.badges = {};
-
-if (!config.quoteType && quoteType) config.quoteType = quoteType;
-
-if (!config.sectionOverrides) config.sectionOverrides = {};
+config.badges ??= {};
+config.quoteType ??= quoteType;
+config.sectionOverrides ??= {};
 
 if (usage) config.sectionOverrides.usage = usage;
 
@@ -174,7 +172,7 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
         { name: 'Double', value: 'double' },
         { name: 'Single', value: 'single' }
       ],
-      default: config.quoteType || defaultQuoteType,
+      default: config.quoteType,
       message: 'Which type of quotes to use in example code?'
     });
   }
