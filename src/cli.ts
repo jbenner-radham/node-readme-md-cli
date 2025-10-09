@@ -90,8 +90,12 @@ try {
 
 const configSectionsPath = path.join(configDirectoryPath, 'sections');
 const usage = attempt(() => readFile(configSectionsPath, 'usage.md').trim());
+const defaultQuoteType = 'single';
+const quoteType = await detectQuoteType();
 
 if (!config.badges) config.badges = {};
+
+if (!config.quoteType && quoteType) config.quoteType = quoteType;
 
 if (!config.sectionOverrides) config.sectionOverrides = {};
 
@@ -160,18 +164,17 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
   }
 
   if (!usage) {
-    const defaultQuoteType = 'single';
-    const quoteType = await detectQuoteType();
     config.preferSemicolons = await confirm({
       default: true,
       message: 'Prefer semicolons in example code?'
     });
     config.quoteType = await select({
       choices: [
-        { name: 'Single', value: 'single' },
-        { name: 'Double', value: 'double' }
+        { name: 'Backtick', value: 'backtick' },
+        { name: 'Double', value: 'double' },
+        { name: 'Single', value: 'single' }
       ],
-      default: config.quoteType || quoteType || defaultQuoteType,
+      default: config.quoteType || defaultQuoteType,
       message: 'Which type of quotes to use in example code?'
     });
   }

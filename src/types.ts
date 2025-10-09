@@ -19,7 +19,7 @@ export type ReadmeMdCliConfig = {
   preferDev?: boolean;
   preferNpm?: boolean;
   preferSemicolons?: boolean;
-  quoteType?: 'double' | 'single';
+  quoteType?: QuoteType;
   sectionOverrides?: {
     usage?: string;
   };
