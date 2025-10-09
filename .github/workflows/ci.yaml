@@ -13,16 +13,20 @@ jobs:
           - 22.x
           - 24.x
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
+      - uses: actions/checkout@v4
       - name: Use pnpm
         uses: pnpm/action-setup@v4.1.0
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
       - name: Install dependencies
         run: pnpm install
       - name: Lint
+        if: ${{ !env.ACT }} # Skip linting if we're running Act since we do that via Husky.
         run: pnpm run lint
       - name: Test
         run: pnpm test
+      - name: Build
+        run: pnpm run build
