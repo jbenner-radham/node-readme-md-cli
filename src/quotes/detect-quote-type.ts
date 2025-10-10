@@ -3,11 +3,11 @@ import type { QuoteType } from '../types.js';
 import detectEslintQuoteType from './detect-eslint-quote-type.js';
 import detectPrettierQuoteType from './detect-prettier-quote-type.js';
 
-export default async function detectQuoteType(): Promise<QuoteType | ''> {
+export default async function detectQuoteType(): Promise<QuoteType | null> {
   const filepath = findSourceIndexPath();
 
   if (!filepath) {
-    return '';
+    return null;
   }
 
   const eslintQuoteStyle = await detectEslintQuoteType(filepath);

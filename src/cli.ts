@@ -94,7 +94,7 @@ const usage = attempt(() => readFile(configSectionsPath, 'usage.md').trim());
 const defaultPreferSemicolons = true;
 const defaultQuoteType = 'single';
 const preferSemicolons = await detectSemicolonPreference() ?? defaultPreferSemicolons;
-const quoteType = await detectQuoteType() || defaultQuoteType;
+const quoteType = await detectQuoteType() ?? defaultQuoteType;
 
 config.badges ??= {};
 config.preferSemicolons ??= preferSemicolons;
