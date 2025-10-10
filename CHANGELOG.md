@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Now attempts to auto-detect the quote type used for code via ESLint and Prettier.
+- Now attempts to auto-detect whether semicolons should be preferred in code via ESLint and Prettier.
 
 [0.20.0] - 2025-10-08
 ---------------------

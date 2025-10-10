@@ -13,6 +13,7 @@ import loadConfigTemplate from './load-config-template.js';
 import parseJsonFile from './parse-json-file.js';
 import detectQuoteType from './quotes/detect-quote-type.js';
 import readFile from './read-file.js';
+import detectSemicolonPreference from './semicolons/detect-semicolon-preference.js';
 import type { AppConfig } from './types.js';
 import { checkbox, confirm, input, select } from '@inquirer/prompts';
 import chalk from 'chalk';
@@ -90,10 +91,13 @@ try {
 
 const configSectionsPath = path.join(configDirectoryPath, 'sections');
 const usage = attempt(() => readFile(configSectionsPath, 'usage.md').trim());
+const defaultPreferSemicolons = true;
 const defaultQuoteType = 'single';
+const preferSemicolons = await detectSemicolonPreference() ?? defaultPreferSemicolons;
 const quoteType = await detectQuoteType() || defaultQuoteType;
 
 config.badges ??= {};
+config.preferSemicolons ??= preferSemicolons;
 config.quoteType ??= quoteType;
 config.sectionOverrides ??= {};
 
@@ -163,7 +167,7 @@ if (process.env.CI !== 'true' && !cli.flags.nonInteractive) {
 
   if (!usage) {
     config.preferSemicolons = await confirm({
-      default: true,
+      default: config.preferSemicolons,
       message: 'Prefer semicolons in example code?'
     });
     config.quoteType = await select({
