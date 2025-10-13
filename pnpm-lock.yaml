@@ -67,8 +67,8 @@ importers:
         specifier: ^6.0.0
         version: 6.0.0(eslint@9.37.0)(typescript@5.9.3)
       '@radham/plus-x':
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.4.0
+        version: 0.4.0
       '@types/js-yaml':
         specifier: ^4.0.9
         version: 4.0.9
@@ -553,8 +553,8 @@ packages:
     peerDependencies:
       eslint: '>=9.35.0'
 
-  '@radham/plus-x@0.2.0':
-    resolution: {integrity: sha512-A8CeU7qcxgGK+MpyGzTCj7VbFvlS66gGLicM2Uj3uxBrQ090NX8NplJ1KPYxsToEQwn9uSHW0MwQzGj0gDqzqQ==}
+  '@radham/plus-x@0.4.0':
+    resolution: {integrity: sha512-DVqaFSFW+jp0UHofl3jHPRShQCXSOlS9MScHdMM10jvG/MjzUn1rQ5j2I/LoE69l8HzL0akFTrgJJcX6UVVKpg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2387,8 +2387,10 @@ snapshots:
       - supports-color
       - typescript
 
-  '@radham/plus-x@0.2.0':
+  '@radham/plus-x@0.4.0':
     dependencies:
+      chalk: 5.6.2
+      glob: 11.0.3
       meow: 14.0.0
 
   '@rollup/rollup-android-arm-eabi@4.52.3':
