@@ -74,7 +74,7 @@
     "meow": "^14.0.0",
     "prettier": "^3.6.2",
     "readme-md": "^1.4.0",
-    "type-fest": "^5.0.1",
+    "type-fest": "^5.1.0",
     "yarn-lockfile-exists": "^1.0.0"
   },
   "devDependencies": {
